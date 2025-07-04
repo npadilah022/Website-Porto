@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,16 +9,16 @@
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
     <style>
-        /* BACKGROUND IMAGE KHUSUS UNTUK PROJECTS PAGE */
-        body#projects-page {
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
-                        url('elektro.jpg') no-repeat center center fixed !important;
-            background-size: cover !important;
-            background-attachment: fixed !important;
-            background-position: center !important;
-            background-repeat: no-repeat !important;
+        /* BACKGROUND IMAGE KHUSUS UNTUK SKILLS PAGE */
+        body#skills-page {
+            background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), 
+                        url('elektro.jpg') no-repeat center center fixed;
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
             font-family: 'Inter', sans-serif;
             min-height: 100vh;
+            color: #f3f4f6;
         }
 
         /* OVERLAY FOR CONTENT */
@@ -59,6 +59,10 @@
         .skill-card {
             transition: all 0.3s ease;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            background: rgba(30, 30, 40, 0.85);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #e5e7eb;
         }
         .skill-card:hover {
             transform: translateY(-5px);
@@ -67,9 +71,35 @@
         .progress-bar {
             transition: width 1.5s ease-in-out;
         }
+        
+        /* Fallback for browsers that don't support backdrop-filter */
+        @supports not (backdrop-filter: blur(10px)) {
+            .navbar {
+                background: rgba(255, 255, 255, 0.98);
+            }
+            .skill-card {
+                background: rgba(30, 30, 40, 0.95);
+            }
+        }
+        
+        /* Print styles */
+        @media print {
+            body#skills-page {
+                background: white !important;
+                color: black !important;
+            }
+            .skill-card {
+                background: white !important;
+                color: black !important;
+                box-shadow: none !important;
+            }
+            .navbar, footer {
+                display: none;
+            }
+        }
     </style>
 </head>
-<body class="font-sans bg-gray-50">
+<body id="skills-page">
     <!-- Header/Navbar -->
     <header class="fixed w-full navbar shadow-sm z-50">
         <div class="container mx-auto px-4">
@@ -137,27 +167,27 @@
     </header>
 
     <!-- Skills Section -->
-    <section class="pt-32 pb-20">
+    <section id="skills" class="pt-32 pb-20 content-overlay">
         <div class="container mx-auto px-4">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Keterampilan Profesional</h2>
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Keterampilan Profesional</h2>
                 <div class="w-24 h-1 bg-gradient-to-r from-indigo-500 to-purple-500 mx-auto mb-6"></div>
-                <p class="text-lg text-gray-600 max-w-2xl mx-auto">Microsoft Word, Excel, PowerPoint, Google Spreadsheets, Drive, Canva, MYOB, Accurate, EagleCAD, Arduino IDE</p>
+                <p class="text-lg text-gray-300 max-w-2xl mx-auto">Microsoft Word, Excel, PowerPoint, Google Spreadsheets, Drive, Canva, MYOB, Accurate, EagleCAD, Arduino IDE</p>
             </div>
             
             <!-- Technical Skills -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                <div class="bg-white rounded-xl shadow-md skill-card p-8">
-                    <h3 class="text-xl font-bold text-gray-800 mb-6">Keahlian Teknis</h3>
+                <div class="rounded-xl shadow-md skill-card p-8">
+                    <h3 class="text-xl font-bold text-white mb-6">Keahlian Teknis</h3>
                     
                     <div class="space-y-6">
                         <!-- Skill 1 -->
                         <div>
                             <div class="flex justify-between mb-2">
-                                <span class="font-medium text-gray-700">Elektronika Industri</span>
-                                <span class="text-gray-600">75%</span>
+                                <span class="font-medium text-gray-300">Elektronika Industri</span>
+                                <span class="text-gray-300">90%</span>
                             </div>
-                            <div class="w-full bg-gray-200 rounded-full h-2.5">
+                            <div class="w-full bg-gray-700 rounded-full h-2.5">
                                 <div class="bg-gradient-to-r from-indigo-500 to-purple-500 h-2.5 rounded-full progress-bar" style="width: 90%"></div>
                             </div>
                         </div>
@@ -165,10 +195,10 @@
                         <!-- Skill 2 -->
                         <div>
                             <div class="flex justify-between mb-2">
-                                <span class="font-medium text-gray-700">Akuntansi</span>
-                                <span class="text-gray-600">80%</span>
+                                <span class="font-medium text-gray-300">Akuntansi</span>
+                                <span class="text-gray-300">80%</span>
                             </div>
-                            <div class="w-full bg-gray-200 rounded-full h-2.5">
+                            <div class="w-full bg-gray-700 rounded-full h-2.5">
                                 <div class="bg-gradient-to-r from-indigo-500 to-purple-500 h-2.5 rounded-full progress-bar" style="width: 80%"></div>
                             </div>
                         </div>
@@ -176,10 +206,10 @@
                         <!-- Skill 3 -->
                         <div>
                             <div class="flex justify-between mb-2">
-                                <span class="font-medium text-gray-700">Microsoft Office</span>
-                                <span class="text-gray-600">80%</span>
+                                <span class="font-medium text-gray-300">Microsoft Office</span>
+                                <span class="text-gray-300">85%</span>
                             </div>
-                            <div class="w-full bg-gray-200 rounded-full h-2.5">
+                            <div class="w-full bg-gray-700 rounded-full h-2.5">
                                 <div class="bg-gradient-to-r from-indigo-500 to-purple-500 h-2.5 rounded-full progress-bar" style="width: 85%"></div>
                             </div>
                         </div>
@@ -187,10 +217,10 @@
                         <!-- Skill 4 -->
                         <div>
                             <div class="flex justify-between mb-2">
-                                <span class="font-medium text-gray-700">Google Workspace</span>
-                                <span class="text-gray-600">75%</span>
+                                <span class="font-medium text-gray-300">Google Workspace</span>
+                                <span class="text-gray-300">75%</span>
                             </div>
-                            <div class="w-full bg-gray-200 rounded-full h-2.5">
+                            <div class="w-full bg-gray-700 rounded-full h-2.5">
                                 <div class="bg-gradient-to-r from-indigo-500 to-purple-500 h-2.5 rounded-full progress-bar" style="width: 75%"></div>
                             </div>
                         </div>
@@ -198,17 +228,17 @@
                 </div>
                 
                 <!-- Additional Skills -->
-                <div class="bg-white rounded-xl shadow-md skill-card p-8">
-                    <h3 class="text-xl font-bold text-gray-800 mb-6">Keterampilan Tambahan</h3>
+                <div class="rounded-xl shadow-md skill-card p-8">
+                    <h3 class="text-xl font-bold text-white mb-6">Keterampilan Tambahan</h3>
                     
                     <div class="space-y-6">
                         <!-- Skill 1 -->
                         <div>
                             <div class="flex justify-between mb-2">
-                                <span class="font-medium text-gray-700">Desain Grafis</span>
-                                <span class="text-gray-600">70%</span>
+                                <span class="font-medium text-gray-300">Desain Grafis</span>
+                                <span class="text-gray-300">70%</span>
                             </div>
-                            <div class="w-full bg-gray-200 rounded-full h-2.5">
+                            <div class="w-full bg-gray-700 rounded-full h-2.5">
                                 <div class="bg-gradient-to-r from-indigo-500 to-purple-500 h-2.5 rounded-full progress-bar" style="width: 70%"></div>
                             </div>
                         </div>
@@ -216,10 +246,10 @@
                         <!-- Skill 2 -->
                         <div>
                             <div class="flex justify-between mb-2">
-                                <span class="font-medium text-gray-700">Software Akuntansi</span>
-                                <span class="text-gray-600">80%</span>
+                                <span class="font-medium text-gray-300">Software Akuntansi</span>
+                                <span class="text-gray-300">80%</span>
                             </div>
-                            <div class="w-full bg-gray-200 rounded-full h-2.5">
+                            <div class="w-full bg-gray-700 rounded-full h-2.5">
                                 <div class="bg-gradient-to-r from-indigo-500 to-purple-500 h-2.5 rounded-full progress-bar" style="width: 80%"></div>
                             </div>
                         </div>
@@ -227,10 +257,10 @@
                         <!-- Skill 3 -->
                         <div>
                             <div class="flex justify-between mb-2">
-                                <span class="font-medium text-gray-700">EagleCAD</span>
-                                <span class="text-gray-600">70%</span>
+                                <span class="font-medium text-gray-300">EagleCAD</span>
+                                <span class="text-gray-300">75%</span>
                             </div>
-                            <div class="w-full bg-gray-200 rounded-full h-2.5">
+                            <div class="w-full bg-gray-700 rounded-full h-2.5">
                                 <div class="bg-gradient-to-r from-indigo-500 to-purple-500 h-2.5 rounded-full progress-bar" style="width: 75%"></div>
                             </div>
                         </div>
@@ -238,10 +268,10 @@
                         <!-- Skill 4 -->
                         <div>
                             <div class="flex justify-between mb-2">
-                                <span class="font-medium text-gray-700">Arduino IDE</span>
-                                <span class="text-gray-600">70%</span>
+                                <span class="font-medium text-gray-300">Arduino IDE</span>
+                                <span class="text-gray-300">70%</span>
                             </div>
-                            <div class="w-full bg-gray-200 rounded-full h-2.5">
+                            <div class="w-full bg-gray-700 rounded-full h-2.5">
                                 <div class="bg-gradient-to-r from-indigo-500 to-purple-500 h-2.5 rounded-full progress-bar" style="width: 70%"></div>
                             </div>
                         </div>
@@ -250,40 +280,40 @@
             </div>
             
             <!-- Software Skills -->
-            <div class="bg-white rounded-xl shadow-md p-8 max-w-4xl mx-auto mt-12 skill-card">
-                <h3 class="text-xl font-bold text-gray-800 mb-6">Penguasaan Perangkat Lunak</h3>
+            <div class="rounded-xl shadow-md p-8 max-w-4xl mx-auto mt-12 skill-card">
+                <h3 class="text-xl font-bold text-white mb-6">Penguasaan Perangkat Lunak</h3>
                 <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
-                    <div class="bg-gray-50 rounded-lg p-4 text-center hover:shadow-md transition">
-                        <i class="bi bi-file-earmark-word text-indigo-600 text-3xl mb-2"></i>
-                        <p class="font-medium">Microsoft Word</p>
+                    <div class="bg-gray-700 rounded-lg p-4 text-center hover:shadow-md transition">
+                        <i class="bi bi-file-earmark-word text-indigo-400 text-3xl mb-2"></i>
+                        <p class="font-medium text-gray-300">Microsoft Word</p>
                     </div>
-                    <div class="bg-gray-50 rounded-lg p-4 text-center hover:shadow-md transition">
-                        <i class="bi bi-file-earmark-excel text-indigo-600 text-3xl mb-2"></i>
-                        <p class="font-medium">Microsoft Excel</p>
+                    <div class="bg-gray-700 rounded-lg p-4 text-center hover:shadow-md transition">
+                        <i class="bi bi-file-earmark-excel text-indigo-400 text-3xl mb-2"></i>
+                        <p class="font-medium text-gray-300">Microsoft Excel</p>
                     </div>
-                    <div class="bg-gray-50 rounded-lg p-4 text-center hover:shadow-md transition">
-                        <i class="bi bi-file-earmark-ppt text-indigo-600 text-3xl mb-2"></i>
-                        <p class="font-medium">PowerPoint</p>
+                    <div class="bg-gray-700 rounded-lg p-4 text-center hover:shadow-md transition">
+                        <i class="bi bi-file-earmark-ppt text-indigo-400 text-3xl mb-2"></i>
+                        <p class="font-medium text-gray-300">PowerPoint</p>
                     </div>
-                    <div class="bg-gray-50 rounded-lg p-4 text-center hover:shadow-md transition">
-                        <i class="bi bi-google text-indigo-600 text-3xl mb-2"></i>
-                        <p class="font-medium">Google Workspace</p>
+                    <div class="bg-gray-700 rounded-lg p-4 text-center hover:shadow-md transition">
+                        <i class="bi bi-google text-indigo-400 text-3xl mb-2"></i>
+                        <p class="font-medium text-gray-300">Google Workspace</p>
                     </div>
-                    <div class="bg-gray-50 rounded-lg p-4 text-center hover:shadow-md transition">
-                        <i class="bi bi-palette text-indigo-600 text-3xl mb-2"></i>
-                        <p class="font-medium">Canva</p>
+                    <div class="bg-gray-700 rounded-lg p-4 text-center hover:shadow-md transition">
+                        <i class="bi bi-palette text-indigo-400 text-3xl mb-2"></i>
+                        <p class="font-medium text-gray-300">Canva</p>
                     </div>
-                    <div class="bg-gray-50 rounded-lg p-4 text-center hover:shadow-md transition">
-                        <i class="bi bi-cash-stack text-indigo-600 text-3xl mb-2"></i>
-                        <p class="font-medium">MYOB</p>
+                    <div class="bg-gray-700 rounded-lg p-4 text-center hover:shadow-md transition">
+                        <i class="bi bi-cash-stack text-indigo-400 text-3xl mb-2"></i>
+                        <p class="font-medium text-gray-300">MYOB</p>
                     </div>
-                    <div class="bg-gray-50 rounded-lg p-4 text-center hover:shadow-md transition">
-                        <i class="bi bi-calculator text-indigo-600 text-3xl mb-2"></i>
-                        <p class="font-medium">Accurate</p>
+                    <div class="bg-gray-700 rounded-lg p-4 text-center hover:shadow-md transition">
+                        <i class="bi bi-calculator text-indigo-400 text-3xl mb-2"></i>
+                        <p class="font-medium text-gray-300">Accurate</p>
                     </div>
-                    <div class="bg-gray-50 rounded-lg p-4 text-center hover:shadow-md transition">
-                        <i class="bi bi-cpu text-indigo-600 text-3xl mb-2"></i>
-                        <p class="font-medium">EagleCAD</p>
+                    <div class="bg-gray-700 rounded-lg p-4 text-center hover:shadow-md transition">
+                        <i class="bi bi-cpu text-indigo-400 text-3xl mb-2"></i>
+                        <p class="font-medium text-gray-300">EagleCAD</p>
                     </div>
                 </div>
             </div>
@@ -311,7 +341,7 @@
                     <a href="https://www.instagram.com/emerald.tx/" class="text-gray-400 hover:text-white transition">
                         <i class="bi bi-instagram text-xl"></i>
                     </a>
-                    <a href="#" class="text-gray-400 hover:text-white transition">
+                    <a href="https://github.com/npadilah022" class="text-gray-400 hover:text-white transition">
                         <i class="bi bi-github text-xl"></i>
                     </a>
                 </div>
@@ -328,16 +358,18 @@
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
 
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-
-        // Close mobile menu when clicking on a link
-        document.querySelectorAll('#mobile-menu a').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
+        if (mobileMenuButton && mobileMenu) {
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
             });
-        });
+
+            // Close mobile menu when clicking on a link
+            document.querySelectorAll('#mobile-menu a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+        }
 
         // Animate progress bars when they come into view
         const animateProgressBars = () => {
