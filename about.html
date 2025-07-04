@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me - Nanda Padilah</title>
+    <!-- Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .navbar {
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.95);
+        }
+        
+        .nav-link {
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #6366f1, #8b5cf6);
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+        }
+        .home-btn {
+            transition: transform 0.3s ease;
+        }
+        .home-btn:hover {
+            transform: translateY(-2px);
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+        .glass-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .timeline-item {
+            position: relative;
+            padding-left: 2.5rem;
+            margin-bottom: 3rem;
+        }
+        .timeline-item:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.5rem;
+            width: 1.5rem;
+            height: 1.5rem;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+            z-index: 1;
+        }
+        .timeline-item:after {
+            content: '';
+            position: absolute;
+            left: 0.75rem;
+            top: 2rem;
+            width: 2px;
+            height: calc(100% - 1rem);
+            background: #e2e8f0;
+        }
+        .timeline-item:last-child:after {
+            display: none;
+        }
+        .nature-footer {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+            url('https://images.unsplash.com/photo-1501854140801-50d01698950b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+
+    </style>
+</head>
+<body class="font-sans bg-gray-50">
+    <!-- Header Sama Persis seperti skills.html -->
+    <header class="fixed w-full navbar shadow-sm z-50">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-3">
+                <!-- Home Button with Icon -->
+                <a href="index.html" class="home-btn flex items-center space-x-6">
+                    <div class="w-10 h-10 rounded-full bg-gradient-to-r from-indigo-500 to-purple-600 flex items-center justify-center shadow-md">
+                        <i class="bi bi-house-door text-white text-lg"></i>
+                    </div>
+                    <span class="ml-6 text-xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">Nanda Padilah</span>
+                </a>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex space-x-2">
+                    <a href="index.html" class="nav-link px-4 py-2 text-gray-700 hover:text-indigo-600 flex items-center">
+                        <i class="bi bi-house-door mr-2"></i> Home
+                    </a>
+                    <a href="about.html" class="nav-link px-4 py-2 text-indigo-600 flex items-center font-medium active">
+                        <i class="bi bi-person-lines-fill mr-2"></i> About
+                    </a>
+                    <a href="projects.html" class="nav-link px-4 py-2 text-gray-700 hover:text-indigo-600 flex items-center">
+                        <i class="bi bi-folder-fill mr-2"></i> projects
+                        </a>
+                    <a href="experience.html" class="nav-link px-4 py-2 text-gray-700 hover:text-indigo-600 flex items-center">
+                        <i class="bi bi-briefcase-fill mr-2"></i> Experience
+                    </a>
+                    <a href="skills.html" class="nav-link px-4 py-2 text-gray-700 hover:text-indigo-600 flex items-center">
+                        <i class="bi bi-tools mr-2"></i> Skills
+                    </a>
+                    <a href="contact.html" class="nav-link px-4 py-2 text-gray-700 hover:text-indigo-600 flex items-center">
+                        <i class="bi bi-envelope-fill mr-2"></i> Contact
+                    </a>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-button" class="md:hidden text-gray-700 focus:outline-none">
+                    <i class="bi bi-list text-2xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white shadow-lg">
+            <div class="container mx-auto px-4 py-2">
+                <a href="index.html" class="block py-3 px-4 text-gray-700 hover:bg-indigo-50 rounded-lg transition flex items-center">
+                    <i class="bi bi-house-door mr-3"></i> Home
+                </a>
+                <a href="about.html" class="block py-3 px-4 text-indigo-600 bg-indigo-50 rounded-lg transition flex items-center font-medium">
+                    <i class="bi bi-person-lines-fill mr-3"></i> About
+                </a>
+                <a href="experience.html" class="block py-3 px-4 text-gray-700 hover:bg-indigo-50 rounded-lg transition flex items-center">
+                    <i class="bi bi-briefcase-fill mr-3"></i> Experience
+                </a>
+                <a href="skills.html" class="block py-3 px-4 text-gray-700 hover:bg-indigo-50 rounded-lg transition flex items-center">
+                    <i class="bi bi-tools mr-3"></i> Skills
+                </a>
+                <a href="projects.html" class="block py-3 px-4 text-gray-700 hover:bg-indigo-50 rounded-lg transition flex items-center">
+                    <i class="bi bi-folder-fill mr-3"></i> Projects
+                </a>
+                <a href="contact.html" class="block py-3 px-4 text-gray-700 hover:bg-indigo-50 rounded-lg transition flex items-center">
+                    <i class="bi bi-envelope-fill mr-3"></i> Contact
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section class="pt-32 pb-20 bg-cover bg-center bg-no-repeat" style="background-image: url('nature.jpg');">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-yellow-300 mb-4">About Me</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-indigo-500 to-purple-500 mx-auto mb-6"></div>
+                <p class="text-lg text-white max-w-2xl mx-auto text">Saya adalah lulusan Teknik Elektronika Industri dan saat ini sedang melanjutkan studi S1 Prodi Akuntansi.</p>
+            </div>
+            
+            <div class="glass-card p-8 rounded-2xl shadow-lg mb-12">
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="md:col-span-2">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-6">Professional Profile</h3>
+                        <p class="text-gray-700 mb-6 leading-relaxed">
+                            Saya mempunyai pengalaman kerja di bidang industri manufaktur dan perusaahan dagang.
+                        </p>
+                        <p class="text-gray-700 mb-6 leading-relaxed">
+                            Fokus konsentasi saya saat ini berfokus pada keuangan, yang dimana mempelajari penuh penyusunan laporan keuangan.
+                            Yang membedakan saya adalah kombinasi unik antara keahlian finansial dan keterampilan teknis. 
+                        </p>
+                        <p class="text-gray-700 leading-relaxed">
+                            Di luar pekerjaan, saya memiliki minat programing dan desain.
+                        </p>
+                    </div>
+                    
+                    <!-- Moto Saya Column -->
+                    <div class="bg-indigo-50 p-6 rounded-xl">
+                        <h3 class="text-xl font-bold text-gray-800 mb-4">Moto Saya</h3>
+                        <div class="bg-white p-4 rounded-lg mb-4">
+                            <i class="bi bi-quote text-indigo-600 text-2xl opacity-50"></i>
+                            <p class="text-justify-700" italic mb-2>
+                                "Ilmu itu luas, maka dari itu pelajari hal tersebut walaupun bertentangan dengan bidang yang saya kuasai."
+                            </p>
+                        </div>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <i class="bi bi-check-circle-fill text-indigo-600 mr-2 mt-1"></i>
+                                <span class="text-gray-700">Integritas dalam semua bidang</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="bi bi-check-circle-fill text-indigo-600 mr-2 mt-1"></i>
+                                <span class="text-gray-700">Inovasi melalui teknologi</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="bi bi-check-circle-fill text-indigo-600 mr-2 mt-1"></i>
+                                <span class="text-gray-700">Pembelajaran berkelanjutan</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Education Section with Icons -->
+            <div class="glass-card p-8 rounded-2xl shadow-lg">
+                <div class="flex items-center mb-6">
+                    <div class="w-12 h-12 rounded-full bg-indigo-100 flex items-center justify-center mr-4">
+                        <i class="bi bi-mortarboard text-indigo-600 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800">Pendidikan</h3>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="flex items-center mb-2">
+                        <i class="bi bi-book text-indigo-600 mr-2"></i>
+                        <span class="px-3 py-1 bg-indigo-100 text-indigo-600 rounded-full text-sm">2022 - 2026</span>
+                    </div>
+                    <h4 class="text-lg font-semibold text-gray-800 mb-2">Akuntansi</h4>
+                    <p class="text-indigo-600 font-medium mb-2">Sekolah Tinggi Ilmu Ekonomi PPI Citra Raya</p>
+                    <p class="text-justify"-700 mb-3>(IPK: 3.7). Saya aktif dalam kegiatan praktik membuat tugas dengan Microsoft Word, membuat laporan keuangan dan pengelolaan data dengan Microsoft Excel, Goggle Spreadsheets, MYOB dan Accurate, membuat presentasi dengan Microsoft PowerPoint, dan Canva, serta menyimpan file dengan Goggle Drive.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-indigo-50 text-indigo-600 rounded-full text-xs">Akuntansi Keuangan</span>
+                        <span class="px-3 py-1 bg-indigo-50 text-indigo-600 rounded-full text-xs">Software Akuntansi</span>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="flex items-center mb-2">
+                        <i class="bi bi-book text-indigo-600 mr-2"></i>
+                        <span class="px-3 py-1 bg-indigo-100 text-indigo-600 rounded-full text-sm">2019 - 2022</span>
+                    </div>
+                    <h4 class="text-lg font-semibold text-gray-800 mb-2">Teknik Elektronika Industri</h4>
+                    <p class="text-indigo-600 font-medium mb-2">SMK Negeri 1 Kabupaten Tangerang</p>
+                    <p class="text-justify"-700 mb-3> (Nilai Rata-rata: 83.4) Saya aktif dalam kegiatan praktik penyolderan, praktik PLC, wiring diagram, pembuatan gambar teknik, pemrograman Arduino mikrokontroller menggunakan software Arduino IDE, praktik pneumatik dan elektropneumatik, praktik hidrolik, pembuatan desain PCB dengan penggunaan software EagleCAD, membuat laporan dengan penggunaan software Microsoft Word, serta persentasi dengan penggunaan software Microsoft PowerPoint.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-indigo-50 text-indigo-600 rounded-full text-xs">Elektronika</span>
+                        <span class="px-3 py-1 bg-indigo-50 text-indigo-600 rounded-full text-xs">Software Elektronika</span>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="flex items-center mb-2">
+                        <i class="bi bi-award text-indigo-600 mr-2"></i>
+                        <span class="px-3 py-1 bg-indigo-100 text-indigo-600 rounded-full text-sm">Maret 2022</span>
+                    </div>
+                    <h4 class="text-lg font-semibold text-gray-800 mb-2">Uji Kompetensi Keahlian</h4>
+                    <p class="text-indigo-600 font-medium mb-2">PT. Global Jaya Elektronik</p>
+                    <p class="text-justify"-700>Menerapkan keselamatan dan kesehatan kerja, menggunakan alat tangan untuk kelistrikan, menggunakan alat ukur, mempersiapkan dan menginterpretasikan gambar teknik, mengoperasikan bahasa pemograman tingkat mesin, menanamkan program ke dalam sistim embeded.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-indigo-50 text-indigo-600 rounded-full text-xs">Arduino IDE</span>
+                        <span class="px-3 py-1 bg-indigo-50 text-indigo-600 rounded-full text-xs">Flutter</span>
+                        <span class="px-3 py-1 bg-indigo-50 text-indigo-600 rounded-full text-xs">EagleCAD</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Sama seperti skills.html -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <h3 class="text-2xl font-bold mb-2">Nanda Padilah</h3>
+                    <p class="text-gray-400">Accounting</p>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="https://www.linkedin.com/in/nanda-padilah-6a5b6434a" class="text-gray-400 hover:text-white transition">
+                        <i class="bi bi-linkedin text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition">
+                        <i class="bi bi-telegram text-xl"></i>
+                    </a>
+                    <a href="https://www.instagram.com/emerald.tx/" class="text-gray-400 hover:text-white transition">
+                        <i class="bi bi-instagram text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition">
+                        <i class="bi bi-github text-xl"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="mt-8 pt-8 border-t border-gray-700 text-center text-gray-500">
+                <p>© 2025 Nanda Padilah. Hak cipta dilindungi.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
