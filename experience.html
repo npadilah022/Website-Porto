@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +9,24 @@
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
     <style>
+        /* BACKGROUND IMAGE KHUSUS UNTUK EXPERIENCE PAGE */
+        body#experience-page {
+            background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), 
+                        url('elektro.jpg') no-repeat center center fixed;
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            font-family: 'Inter', sans-serif;
+            min-height: 100vh;
+            color: #f3f4f6;
+        }
+
+        /* OVERLAY FOR CONTENT */
+        .content-overlay {
+            position: relative;
+            z-index: 1;
+        }
+
         .navbar {
             transition: all 0.3s ease;
             backdrop-filter: blur(10px);
@@ -39,10 +57,11 @@
             transform: translateY(-2px);
         }
         .glass-card {
-            background: rgba(255, 255, 255, 0.85);
+            background: rgba(30, 30, 40, 0.85);
             backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             transition: all 0.3s ease;
+            color: #e5e7eb;
         }
         .glass-card:hover {
             transform: translateY(-5px);
@@ -51,10 +70,43 @@
         .gradient-bg {
             background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
         }
+        .glass-card h3,
+        .glass-card p {
+            color: #f9fafb;
+        }
+        .glass-card .text-indigo-600 {
+            color: #a5b4fc;
+        }
+        
+        /* Fallback for browsers that don't support backdrop-filter */
+        @supports not (backdrop-filter: blur(10px)) {
+            .navbar {
+                background: rgba(255, 255, 255, 0.98);
+            }
+            .glass-card {
+                background: rgba(30, 30, 40, 0.95);
+            }
+        }
+        
+        /* Print styles */
+        @media print {
+            body#experience-page {
+                background: white !important;
+                color: black !important;
+            }
+            .glass-card {
+                background: white !important;
+                color: black !important;
+                box-shadow: none !important;
+            }
+            .navbar, footer {
+                display: none;
+            }
+        }
     </style>
 </head>
-<body class="font-sans bg-gray-50">
-    <!-- Header Sama Persis seperti skills.html -->
+<body id="experience-page">
+    <!-- Header -->
     <header class="fixed w-full navbar shadow-sm z-50">
         <div class="container mx-auto px-4">
             <div class="flex justify-between items-center py-3">
@@ -121,12 +173,12 @@
     </header>
 
     <!-- Experience Section -->
-    <section class="pt-32 pb-20">
+    <section class="pt-32 pb-20 content-overlay">
         <div class="container mx-auto px-4">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Pengalaman Profesional</h2>
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Pengalaman Profesional</h2>
                 <div class="w-24 h-1 bg-gradient-to-r from-indigo-500 to-purple-500 mx-auto mb-6"></div>
-                <p class="text-lg text-gray-600 max-w-2xl mx-auto">Perjalanan saya melalui berbagai peran keuangan</p>
+                <p class="text-lg text-gray-300 max-w-2xl mx-auto">Perjalanan saya melalui berbagai bidang</p>
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -136,17 +188,17 @@
                         <div class="flex justify-between items-center mb-4">
                             <div class="flex items-center">
                                 <div class="w-12 h-12 gradient-bg rounded-xl flex items-center justify-center mr-4 shadow-md">
-                                    <i class="bi bi-graph-up text-white text-xl"></i>
+                                    <i class="bi bi-pc-display-horizontal text-white text-xl"></i>
                                 </div>
-                                <h3 class="text-xl font-semibold text-gray-800">Senior Financial Analyst</h3>
+                                <h3 class="text-xl font-semibold">Magang Administrasi Keuangan</h3>
                             </div>
-                            <span class="px-3 py-1 bg-indigo-100 text-indigo-600 rounded-full text-sm">2021 - Sekarang</span>
+                            <span class="px-3 py-1 bg-indigo-100 text-indigo-600 rounded-full text-sm">Februari - Mei 2025</span>
                         </div>
-                        <p class="text-indigo-600 mb-2 font-medium">Global Finance Corp</p>
-                        <p class="text-gray-700 mb-4">Memimpin analisis keuangan untuk akun utama, mengembangkan model peramalan yang meningkatkan akurasi anggaran sebesar 12%.</p>
+                        <p class="text-indigo-300 mb-2 font-medium">CV. Putra Mandiri Teknik</p>
+                        <p class="mb-4">Mengoperasikan software Accurate 4 perusahaan, serta Microsoft Excel dan Word. Input penerimaan penjualan, pembayaran. Input petty cash keluar masuk, input buku kas keluar masuk dengan penyertaan PPN dan non PPN pada 4 perusahaan. Check histori transaksi pembayaran dan penerimaan pada kas dan bank serta dengan buku bank, check rincian daftar pembayaran, sortir rincian penjualan per pelanggan dan ringkasan pembayaran untuk cetak bukti. Melakukan rekonsiliasi bank dan input laporan kas setiap akhir bulan, rekap hutang beredar, serta membuat voucher pengeluaran dan penerimaan kas pada 2 perusahaan.</p>
                         <div class="flex flex-wrap gap-2">
-                            <span class="px-3 py-1 bg-white text-indigo-600 rounded-full text-sm shadow-sm">Pemodelan Keuangan</span>
-                            <span class="px-3 py-1 bg-white text-indigo-600 rounded-full text-sm shadow-sm">Perencanaan Anggaran</span>
+                            <span class="px-3 py-1 bg-gray-800 text-indigo-300 rounded-full text-sm shadow-sm">Microsoft Word dan Excel</span>
+                            <span class="px-3 py-1 bg-gray-800 text-indigo-300 rounded-full text-sm shadow-sm">Accurate</span>
                         </div>
                     </div>
 
@@ -154,17 +206,17 @@
                         <div class="flex justify-between items-center mb-4">
                             <div class="flex items-center">
                                 <div class="w-12 h-12 gradient-bg rounded-xl flex items-center justify-center mr-4 shadow-md">
-                                    <i class="bi bi-clipboard-data text-white text-xl"></i>
+                                    <i class="bi bi-tools text-white text-xl"></i>
                                 </div>
-                                <h3 class="text-xl font-semibold text-gray-800">Asisten Administrasi</h3>
+                                <h3 class="text-xl font-semibold">Operator Mesin Label</h3>
                             </div>
-                            <span class="px-3 py-1 bg-indigo-100 text-indigo-600 rounded-full text-sm">2018 - 2019</span>
+                            <span class="px-3 py-1 bg-indigo-100 text-indigo-600 rounded-full text-sm">Februari - Maret 2024</span>
                         </div>
-                        <p class="text-indigo-600 mb-2 font-medium">EU Financial Services</p>
-                        <p class="text-gray-700 mb-4">Memberikan dukungan administratif kepada departemen keuangan dan membantu tugas pembukuan dasar.</p>
+                        <p class="text-indigo-300 mb-2 font-medium">PT. Amanah Prima Indonesia</p>
+                        <p class="mb-4">Mengolah buah, mempersiapkan mesin, mengoperasikan mesin pembersih buah, pengolahan buah dan label, melakukan pengemasan produk, dokumentasi produksi, dan memperbaiki kualitas produk.</p>
                         <div class="flex flex-wrap gap-2">
-                            <span class="px-3 py-1 bg-white text-indigo-600 rounded-full text-sm shadow-sm">Dukungan Administratif</span>
-                            <span class="px-3 py-1 bg-white text-indigo-600 rounded-full text-sm shadow-sm">Pembukuan</span>
+                            <span class="px-3 py-1 bg-gray-800 text-indigo-300 rounded-full text-sm shadow-sm">Mesin Label</span>
+                            <span class="px-3 py-1 bg-gray-800 text-indigo-300 rounded-full text-sm shadow-sm">Produksi</span>
                         </div>
                     </div>
                 </div>
@@ -175,17 +227,18 @@
                         <div class="flex justify-between items-center mb-4">
                             <div class="flex items-center">
                                 <div class="w-12 h-12 gradient-bg rounded-xl flex items-center justify-center mr-4 shadow-md">
-                                    <i class="bi bi-cash-coin text-white text-xl"></i>
+                                    <i class="bi bi-tools text-white text-xl"></i>
                                 </div>
-                                <h3 class="text-xl font-semibold text-gray-800">Administrator Keuangan</h3>
+                                <h3 class="text-xl font-semibold">Operator Mesin Bubut</h3>
                             </div>
-                            <span class="px-3 py-1 bg-indigo-100 text-indigo-600 rounded-full text-sm">2019 - 2021</span>
+                            <span class="px-3 py-1 bg-indigo-100 text-indigo-600 rounded-full text-sm">Juni - Agustus 2023</span>
                         </div>
-                        <p class="text-indigo-600 mb-2 font-medium">AEC Company</p>
-                        <p class="text-gray-700 mb-4">Mengelola proses hutang dan piutang, menyiapkan laporan keuangan, dan mengimplementasikan sistem pengarsipan digital baru.</p>
+                        <p class="text-indigo-300 mb-2 font-medium">PT. FAD Kamikawa</p>
+                        <p class="mb-4">Mempersiapkan mesin, mengoperasikan mesin bubut, melakukan perbaikan mesin secara berkala, melakukan pembubutan terhadap produk sesuai dengan ukuran, dokumentasi produk, dan memperbaiki kualitas produk.</p>
                         <div class="flex flex-wrap gap-2">
-                            <span class="px-3 py-1 bg-white text-indigo-600 rounded-full text-sm shadow-sm">Pelaporan Keuangan</span>
-                            <span class="px-3 py-1 bg-white text-indigo-600 rounded-full text-sm shadow-sm">Manajemen Akun</span>
+                            <span class="px-3 py-1 bg-gray-800 text-indigo-300 rounded-full text-sm shadow-sm">Mesin Bubut Manual</span>
+                            <span class="px-3 py-1 bg-gray-800 text-indigo-300 rounded-full text-sm shadow-sm">Produksi</span>
+                            <span class="px-3 py-1 bg-gray-800 text-indigo-300 rounded-full text-sm shadow-sm">Quality Control</span>
                         </div>
                     </div>
 
@@ -193,17 +246,18 @@
                         <div class="flex justify-between items-center mb-4">
                             <div class="flex items-center">
                                 <div class="w-12 h-12 gradient-bg rounded-xl flex items-center justify-center mr-4 shadow-md">
-                                    <i class="bi bi-bar-chart text-white text-xl"></i>
+                                    <i class="bi bi-tools text-white text-xl"></i>
                                 </div>
-                                <h3 class="text-xl font-semibold text-gray-800">Konsultan Keuangan</h3>
+                                <h3 class="text-xl font-semibold">Operator Produksi</h3>
                             </div>
-                            <span class="px-3 py-1 bg-indigo-100 text-indigo-600 rounded-full text-sm">2020 - 2021</span>
+                            <span class="px-3 py-1 bg-indigo-100 text-indigo-600 rounded-full text-sm">Juni - Desember 2022</span>
                         </div>
-                        <p class="text-indigo-600 mb-2 font-medium">Konsultan Independen</p>
-                        <p class="text-gray-700 mb-4">Memberikan layanan konsultasi keuangan untuk startup dan UKM, membantu mereka mengoptimalkan operasi keuangan.</p>
+                        <p class="text-indigo-300 mb-2 font-medium">PT. Amanah Prima Indonesia</p>
+                        <p class="mb-4">Melakukan perakitan produk alat kesehatan sesuai intruksi kerja, menguji coba produk, melakukan perbaikan dan penggantian suku cadang pada produk yang rusak, berkontribusi dalam pengemasan, mengoperasikan mesin laminasi, laser dan penyegel plastik, melakukan dokumentasi hasil produksi dan pengemasan.</p>
                         <div class="flex flex-wrap gap-2">
-                            <span class="px-3 py-1 bg-white text-indigo-600 rounded-full text-sm shadow-sm">Konsultasi Keuangan</span>
-                            <span class="px-3 py-1 bg-white text-indigo-600 rounded-full text-sm shadow-sm">Optimasi Profit</span>
+                            <span class="px-3 py-1 bg-gray-800 text-indigo-300 rounded-full text-sm shadow-sm">Mesin Laminasi, Laser dan Segel Plastik</span>
+                            <span class="px-3 py-1 bg-gray-800 text-indigo-300 rounded-full text-sm shadow-sm">Produksi dan Pengemasan</span>
+                            <span class="px-3 py-1 bg-gray-800 text-indigo-300 rounded-full text-sm shadow-sm">Quality Control</span>
                         </div>
                     </div>
                 </div>
@@ -217,25 +271,28 @@
             <div class="flex flex-col md:flex-row justify-between items-center">
                 <div class="mb-6 md:mb-0">
                     <h3 class="text-2xl font-bold mb-2">Nanda Padilah</h3>
-                    <p class="text-gray-400">Financial Analyst & Strategic Planner</p>
+                    <p class="text-gray-400">ex Administrasi Keuangan</p>
                 </div>
                 <div class="flex space-x-6">
                     <a href="https://www.linkedin.com/in/nanda-padilah-6a5b6434a" class="text-gray-400 hover:text-white transition">
                         <i class="bi bi-linkedin text-xl"></i>
                     </a>
                     <a href="#" class="text-gray-400 hover:text-white transition">
-                        <i class="bi bi-twitter text-xl"></i>
+                        <i class="bi bi-whatsapp text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition">
+                        <i class="bi bi-telegram text-xl"></i>
                     </a>
                     <a href="https://www.instagram.com/emerald.tx/" class="text-gray-400 hover:text-white transition">
                         <i class="bi bi-instagram text-xl"></i>
                     </a>
-                    <a href="#" class="text-gray-400 hover:text-white transition">
+                    <a href="https://github.com/npadilah022" class="text-gray-400 hover:text-white transition">
                         <i class="bi bi-github text-xl"></i>
                     </a>
                 </div>
             </div>
             <div class="mt-8 pt-8 border-t border-gray-700 text-center text-gray-500">
-                <p>© 2023 Nanda Padilah. Hak cipta dilindungi.</p>
+                <p>© 2025 Nanda Padilah. All rights reserved.</p>
             </div>
         </div>
     </footer>
@@ -245,14 +302,30 @@
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
 
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
+        if (mobileMenuButton && mobileMenu) {
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
 
-        // Close mobile menu when clicking on a link
-        document.querySelectorAll('#mobile-menu a').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
+            // Close mobile menu when clicking on a link
+            document.querySelectorAll('#mobile-menu a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+        }
+        
+        // Add active class to current page
+        document.addEventListener('DOMContentLoaded', function() {
+            const currentPage = location.pathname.split('/').pop();
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            navLinks.forEach(link => {
+                const linkHref = link.getAttribute('href');
+                if (linkHref === currentPage) {
+                    link.classList.add('active', 'text-indigo-600');
+                    link.querySelector('i').style.color = '';
+                }
             });
         });
     </script>
