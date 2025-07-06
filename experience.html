@@ -274,6 +274,94 @@
             background-color: #4a5568;
             color: #e2e8f0;
         }
+        
+        /* ANIMASI TEKS BARU */
+        .animated-text {
+            transition: all 0.4s ease;
+            position: relative;
+        }
+        
+        .glass-card:hover .animated-text {
+            transform: translateY(-3px);
+            text-shadow: 0 4px 15px rgba(139, 92, 246, 0.5);
+        }
+        
+        .animated-paragraph {
+            transition: all 0.5s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .glass-card:hover .animated-paragraph {
+            color: #ffffff;
+            transform: scale(1.01);
+        }
+        
+        .animated-paragraph::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(139, 92, 246, 0.1), transparent);
+            transition: all 0.8s ease;
+        }
+        
+        .glass-card:hover .animated-paragraph::before {
+            left: 100%;
+        }
+        
+        .animated-highlight {
+            background: linear-gradient(120deg, #6366f1, #8b5cf6);
+            background-size: 200% 200%;
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            animation: gradientShift 4s ease infinite;
+            transition: all 0.3s ease;
+        }
+        
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .glass-card:hover .animated-highlight {
+            animation: gradientShift 2.5s ease infinite;
+            text-shadow: 0 0 10px rgba(139, 92, 246, 0.5);
+        }
+        
+        .animated-border {
+            position: relative;
+            padding-bottom: 5px;
+        }
+        
+        .animated-border::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #6366f1, #8b5cf6);
+            transition: width 0.5s ease;
+        }
+        
+        .glass-card:hover .animated-border::after {
+            width: 100%;
+        }
+        
+        .floating-text {
+            animation: float 4s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-8px); }
+            100% { transform: translateY(0px); }
+        }
     </style>
 </head>
 <body id="experience-page" class="font-inter light">
@@ -354,7 +442,7 @@
     <section class="pt-32 pb-20 section-padding content-overlay">
         <div class="container mx-auto px-4">
             <div class="text-center mb-16 animate-card" style="animation-delay: 0.1s;">
-                <h2 class="text-3xl md:text-4xl font-bold text-contrast mb-4">Pengalaman Profesional</h2>
+                <h2 class="text-3xl md:text-4xl font-bold text-contrast mb-4 floating-text">Pengalaman Profesional</h2>
                 <div class="w-24 h-1 bg-gradient-to-r from-indigo-500 to-purple-500 mx-auto mb-6"></div>
                 <p class="text-lg text-gray-300 max-w-2xl mx-auto">Perjalanan saya melalui berbagai bidang</p>
             </div>
@@ -368,12 +456,12 @@
                                 <div class="w-12 h-12 gradient-bg rounded-xl flex items-center justify-center mr-4 shadow-md">
                                     <i class="bi bi-pc-display-horizontal text-white text-xl"></i>
                                 </div>
-                                <h3 class="text-xl font-semibold">Magang Administrasi Keuangan</h3>
+                                <h3 class="text-xl font-semibold animated-text">Magang Administrasi Keuangan</h3>
                             </div>
-                            <span class="px-3 py-1 bg-indigo-100 text-indigo-600 rounded-full text-sm dark:bg-indigo-900 dark:text-indigo-200">Februari - Mei 2025</span>
+                            <span class="px-3 py-1 bg-indigo-100 text-indigo-600 rounded-full text-sm dark:bg-indigo-900 dark:text-indigo-200 animated-highlight">Februari - Mei 2025</span>
                         </div>
-                        <p class="text-indigo-300 mb-2 font-medium">CV. Putra Mandiri Teknik</p>
-                        <p class="mb-4 dark:text-gray-300">Mengoperasikan software Accurate 4 perusahaan, serta Microsoft Excel dan Word. Input penerimaan penjualan, pembayaran. Input petty cash keluar masuk, input buku kas keluar masuk dengan penyertaan PPN dan non PPN pada 4 perusahaan. Check histori transaksi pembayaran dan penerimaan pada kas dan bank serta dengan buku bank, check rincian daftar pembayaran, sortir rincian penjualan per pelanggan dan ringkasan pembayaran untuk cetak bukti. Melakukan rekonsiliasi bank dan input laporan kas setiap akhir bulan, rekap hutang beredar, serta membuat voucher pengeluaran dan penerimaan kas pada 2 perusahaan.</p>
+                        <p class="text-indigo-300 mb-2 font-medium animated-border">CV. Putra Mandiri Teknik</p>
+                        <p class="mb-4 dark:text-gray-300 animated-paragraph">Mengoperasikan software Accurate 4 perusahaan, serta Microsoft Excel dan Word. Input penerimaan penjualan, pembayaran. Input petty cash keluar masuk, input buku kas keluar masuk dengan penyertaan PPN dan non PPN pada 4 perusahaan. Check histori transaksi pembayaran dan penerimaan pada kas dan bank serta dengan buku bank, check rincian daftar pembayaran, sortir rincian penjualan per pelanggan dan ringkasan pembayaran untuk cetak bukti. Melakukan rekonsiliasi bank dan input laporan kas setiap akhir bulan, rekap hutang beredar, serta membuat voucher pengeluaran dan penerimaan kas pada 2 perusahaan.</p>
                         <div class="flex flex-wrap gap-2">
                             <span class="tech-badge px-3 py-1 bg-gray-800 text-indigo-300 rounded-full text-sm shadow-sm dark:bg-gray-700 dark:text-indigo-300">Microsoft Word dan Excel</span>
                             <span class="tech-badge px-3 py-1 bg-gray-800 text-indigo-300 rounded-full text-sm shadow-sm dark:bg-gray-700 dark:text-indigo-300">Accurate</span>
@@ -386,12 +474,12 @@
                                 <div class="w-12 h-12 gradient-bg rounded-xl flex items-center justify-center mr-4 shadow-md">
                                     <i class="bi bi-tools text-white text-xl"></i>
                                 </div>
-                                <h3 class="text-xl font-semibold">Operator Mesin Label</h3>
+                                <h3 class="text-xl font-semibold animated-text">Operator Mesin Label</h3>
                             </div>
-                            <span class="px-3 py-1 bg-indigo-100 text-indigo-600 rounded-full text-sm dark:bg-indigo-900 dark:text-indigo-200">Februari - Maret 2024</span>
+                            <span class="px-3 py-1 bg-indigo-100 text-indigo-600 rounded-full text-sm dark:bg-indigo-900 dark:text-indigo-200 animated-highlight">Februari - Maret 2024</span>
                         </div>
-                        <p class="text-indigo-300 mb-2 font-medium">PT. Amanah Prima Indonesia</p>
-                        <p class="mb-4 dark:text-gray-300">Mengolah buah, mempersiapkan mesin, mengoperasikan mesin pembersih buah, pengolahan buah dan label, melakukan pengemasan produk, dokumentasi produksi, dan memperbaiki kualitas produk.</p>
+                        <p class="text-indigo-300 mb-2 font-medium animated-border">PT. Amanah Prima Indonesia</p>
+                        <p class="mb-4 dark:text-gray-300 animated-paragraph">Mengolah buah, mempersiapkan mesin, mengoperasikan mesin pembersih buah, pengolahan buah dan label, melakukan pengemasan produk, dokumentasi produksi, dan memperbaiki kualitas produk.</p>
                         <div class="flex flex-wrap gap-2">
                             <span class="tech-badge px-3 py-1 bg-gray-800 text-indigo-300 rounded-full text-sm shadow-sm dark:bg-gray-700 dark:text-indigo-300">Mesin Label</span>
                             <span class="tech-badge px-3 py-1 bg-gray-800 text-indigo-300 rounded-full text-sm shadow-sm dark:bg-gray-700 dark:text-indigo-300">Produksi</span>
@@ -407,12 +495,12 @@
                                 <div class="w-12 h-12 gradient-bg rounded-xl flex items-center justify-center mr-4 shadow-md">
                                     <i class="bi bi-tools text-white text-xl"></i>
                                 </div>
-                                <h3 class="text-xl font-semibold">Operator Mesin Bubut</h3>
+                                <h3 class="text-xl font-semibold animated-text">Operator Mesin Bubut</h3>
                             </div>
-                            <span class="px-3 py-1 bg-indigo-100 text-indigo-600 rounded-full text-sm dark:bg-indigo-900 dark:text-indigo-200">Juni - Agustus 2023</span>
+                            <span class="px-3 py-1 bg-indigo-100 text-indigo-600 rounded-full text-sm dark:bg-indigo-900 dark:text-indigo-200 animated-highlight">Juni - Agustus 2023</span>
                         </div>
-                        <p class="text-indigo-300 mb-2 font-medium">PT. FAD Kamikawa</p>
-                        <p class="mb-4 dark:text-gray-300">Mempersiapkan mesin, mengoperasikan mesin bubut, melakukan perbaikan mesin secara berkala, melakukan pembubutan terhadap produk sesuai dengan ukuran, dokumentasi produk, dan memperbaiki kualitas produk.</p>
+                        <p class="text-indigo-300 mb-2 font-medium animated-border">PT. FAD Kamikawa</p>
+                        <p class="mb-4 dark:text-gray-300 animated-paragraph">Mempersiapkan mesin, mengoperasikan mesin bubut, melakukan perbaikan mesin secara berkala, melakukan pembubutan terhadap produk sesuai dengan ukuran, dokumentasi produk, dan memperbaiki kualitas produk.</p>
                         <div class="flex flex-wrap gap-2">
                             <span class="tech-badge px-3 py-1 bg-gray-800 text-indigo-300 rounded-full text-sm shadow-sm dark:bg-gray-700 dark:text-indigo-300">Mesin Bubut Manual</span>
                             <span class="tech-badge px-3 py-1 bg-gray-800 text-indigo-300 rounded-full text-sm shadow-sm dark:bg-gray-700 dark:text-indigo-300">Produksi</span>
@@ -426,12 +514,12 @@
                                 <div class="w-12 h-12 gradient-bg rounded-xl flex items-center justify-center mr-4 shadow-md">
                                     <i class="bi bi-tools text-white text-xl"></i>
                                 </div>
-                                <h3 class="text-xl font-semibold">Operator Produksi</h3>
+                                <h3 class="text-xl font-semibold animated-text">Operator Produksi</h3>
                             </div>
-                            <span class="px-3 py-1 bg-indigo-100 text-indigo-600 rounded-full text-sm dark:bg-indigo-900 dark:text-indigo-200">Juni - Desember 2022</span>
+                            <span class="px-3 py-1 bg-indigo-100 text-indigo-600 rounded-full text-sm dark:bg-indigo-900 dark:text-indigo-200 animated-highlight">Juni - Desember 2022</span>
                         </div>
-                        <p class="text-indigo-300 mb-2 font-medium">PT. Amanah Prima Indonesia</p>
-                        <p class="mb-4 dark:text-gray-300">Melakukan perakitan produk alat kesehatan sesuai intruksi kerja, menguji coba produk, melakukan perbaikan dan penggantian suku cadang pada produk yang rusak, berkontribusi dalam pengemasan, mengoperasikan mesin laminasi, laser dan penyegel plastik, melakukan dokumentasi hasil produksi dan pengemasan.</p>
+                        <p class="text-indigo-300 mb-2 font-medium animated-border">PT. Amanah Prima Indonesia</p>
+                        <p class="mb-4 dark:text-gray-300 animated-paragraph">Melakukan perakitan produk alat kesehatan sesuai intruksi kerja, menguji coba produk, melakukan perbaikan dan penggantian suku cadang pada produk yang rusak, berkontribusi dalam pengemasan, mengoperasikan mesin laminasi, laser dan penyegel plastik, melakukan dokumentasi hasil produksi dan pengemasan.</p>
                         <div class="flex flex-wrap gap-2">
                             <span class="tech-badge px-3 py-1 bg-gray-800 text-indigo-300 rounded-full text-sm shadow-sm dark:bg-gray-700 dark:text-indigo-300">Mesin Laminasi, Laser dan Segel Plastik</span>
                             <span class="tech-badge px-3 py-1 bg-gray-800 text-indigo-300 rounded-full text-sm shadow-sm dark:bg-gray-700 dark:text-indigo-300">Produksi dan Pengemasan</span>
