@@ -81,6 +81,11 @@
         .theme-toggle:hover {
             transform: rotate(15deg) scale(1.1);
         }
+
+        /* Sidebar Transition */
+        .sidebar-transition {
+            transition: transform 0.3s ease-in-out;
+        }
     </style>
 </head>
 <body class="font-inter light">
@@ -100,13 +105,13 @@
                     <a href="about.html" class="text-gray-700 hover:text-indigo-600 transition dark:text-gray-300 dark:hover:text-indigo-400">About</a>
                     <a href="projects.html" class="text-gray-700 hover:text-indigo-600 transition dark:text-gray-300 dark:hover:text-indigo-400">Projects</a>
                     <a href="experience.html" class="text-gray-700 hover:text-indigo-600 transition dark:text-gray-300 dark:hover:text-indigo-400">Experience</a>
+                    <a href="certificate.html" class="text-gray-700 hover:text-indigo-600 transition dark:text-gray-300 dark:hover:text-indigo-400">Certificate</a>
                     <a href="skills.html" class="text-gray-700 hover:text-indigo-600 transition dark:text-gray-300 dark:hover:text-indigo-400">Skills</a>
                     <a href="contact.html" class="text-gray-700 hover:text-indigo-600 transition dark:text-gray-300 dark:hover:text-indigo-400">Contact</a>
                 </nav>
                 
                 <!-- Dark Mode Toggle -->
                 <div class="flex items-center space-x-4">
-                    <!-- Tombol Dark Mode yang diperbarui -->
                     <div id="theme-toggle" class="theme-toggle">
                         <i id="theme-icon" class="bi bi-moon text-gray-700 dark:text-yellow-300"></i>
                     </div>
@@ -127,6 +132,7 @@
             <a href="index.html" class="block py-2 px-4 text-gray-700 hover:bg-indigo-50 rounded-lg transition dark:text-gray-300 dark:hover:bg-gray-700">Home</a>
             <a href="about.html" class="block py-2 px-4 text-gray-700 hover:bg-indigo-50 rounded-lg transition dark:text-gray-300 dark:hover:bg-gray-700">About</a>
             <a href="projects.html" class="block py-2 px-4 text-gray-700 hover:bg-indigo-50 rounded-lg transition dark:text-gray-300 dark:hover:bg-gray-700">Projects</a>
+            <a href="experience.html" class="block py-2 px-4 text-gray-700 hover:bg-indigo-50 rounded-lg transition dark:text-gray-300 dark:hover:bg-gray-700">Experience</a>
             <a href="skills.html" class="block py-2 px-4 text-gray-700 hover:bg-indigo-50 rounded-lg transition dark:text-gray-300 dark:hover:bg-gray-700">Skills</a>
             <a href="contact.html" class="block py-2 px-4 text-gray-700 hover:bg-indigo-50 rounded-lg transition dark:text-gray-300 dark:hover:bg-gray-700">Contact</a>
         </div>
@@ -143,6 +149,21 @@
             </a>
             <a href="about.html" class="flex items-center py-3 px-4 hover:bg-indigo-50 rounded-lg text-gray-700 dark:text-gray-300 dark:hover:bg-gray-700">
                 <i class="bi bi-person mr-3"></i> Profil
+            </a>
+            <a href="projects.html" class="flex items-center py-3 px-4 hover:bg-indigo-50 rounded-lg text-gray-700 dark:text-gray-300 dark:hover:bg-gray-700">
+                <i class="bi bi-folder mr-3"></i> Projects
+            </a>
+            <a href="experience.html" class="flex items-center py-3 px-4 hover:bg-indigo-50 rounded-lg text-gray-700 dark:text-gray-300 dark:hover:bg-gray-700">
+                <i class="bi bi-briefcase mr-3"></i> Experience
+            </a>
+            <a href="certificate.html" class="flex items-center py-3 px-4 hover:bg-indigo-50 rounded-lg text-gray-700 dark:text-gray-300 dark:hover:bg-gray-700">
+                <i class="bi bi-award mr-3"></i> Certificate
+            </a>
+            <a href="skills.html" class="flex items-center py-3 px-4 hover:bg-indigo-50 rounded-lg text-gray-700 dark:text-gray-300 dark:hover:bg-gray-700">
+                <i class="bi bi-tools mr-3"></i> Skills
+            </a>
+            <a href="contact.html" class="flex items-center py-3 px-4 hover:bg-indigo-50 rounded-lg text-gray-700 dark:text-gray-300 dark:hover:bg-gray-700">
+                <i class="bi bi-envelope mr-3"></i> Contact
             </a>
         </nav>
     </div>
@@ -190,6 +211,7 @@
                     <a href="about.html" class="text-gray-400 hover:text-white transition">About</a>
                     <a href="projects.html" class="text-gray-400 hover:text-white transition">Projects</a>
                     <a href="experience.html" class="text-gray-400 hover:text-white transition">Experience</a>
+                    <a href="certificate.html" class="text-gray-400 hover:text-white transition">Certificate</a>
                     <a href="skills.html" class="text-gray-400 hover:text-white transition">Skills</a>
                     <a href="contact.html" class="text-gray-400 hover:text-white transition">Contact</a>
                 </div>
@@ -199,8 +221,8 @@
                 <p class="text-gray-400 text-sm mb-4 md:mb-0">© 2025 Nanda Padilah. All rights reserved.</p>
                 <div class="flex space-x-4">
                     <a href="https://www.linkedin.com/in/nanda-padilah-6a5b6434a" class="social-icon linkedin w-10 h-10 bg-blue-700 rounded-full flex items-center justify-center text-white hover:bg-blue-800 transition dark:bg-gray-700">
-                    <i class="fab fa-linkedin-in"></i>
-                </a>
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
                     <a href="+62 813-1138-4266" class="social-icon whatsapp w-10 h-10 bg-blue-400 rounded-full flex items-center justify-center text-white hover:bg-blue-500 transition dark:bg-gray-700">
                         <i class="fab fa-whatsapp"></i>
                     </a>

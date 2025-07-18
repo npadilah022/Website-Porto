@@ -8,8 +8,6 @@
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
@@ -39,42 +37,22 @@
             background-color: #4a5568;
         }
 
-        /* BACKGROUND IMAGE KHUSUS UNTUK CONTACT PAGE */
-        body#contact-page {
-            background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), 
-                        url('nature.jpg') no-repeat center center fixed !important;
-            background-size: cover !important;
-            background-attachment: fixed !important;
-            background-position: center !important;
-            background-repeat: no-repeat !important;
-            font-family: 'Inter', sans-serif;
-            min-height: 100vh;
-            color: #f3f4f6;
-        }
-
-        .dark body#contact-page {
-            background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), 
-                        url('nature.jpg') no-repeat center center fixed !important;
-            background-size: cover !important;
-            background-attachment: fixed !important;
-            background-position: center !important;
-            background-repeat: no-repeat !important;
-        }
-
-        /* OVERLAY FOR CONTENT */
-        .content-overlay {
-            position: relative;
-            z-index: 1;
-        }
-
+        /* NAVBAR FIXED POSITION */
         .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 50;
             transition: all 0.3s ease;
             backdrop-filter: blur(10px);
             background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
         
         .dark .navbar {
             background: rgba(45, 55, 72, 0.95);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
         }
         
         .nav-link {
@@ -101,12 +79,25 @@
         .nav-link.active::after {
             width: 100%;
         }
-        
-        .home-btn {
-            transition: transform 0.3s ease;
+
+        /* BACKGROUND IMAGE KHUSUS UNTUK CONTACT PAGE */
+        body#contact-page {
+            padding-top: 80px; /* Tambahkan padding untuk navbar fixed */
+            background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), 
+                        url('nature.jpg') no-repeat center center fixed;
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            font-family: 'Inter', sans-serif;
+            min-height: 100vh;
+            color: #f3f4f6;
         }
-        .home-btn:hover {
-            transform: translateY(-2px);
+
+        .dark body#contact-page {
+            background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), 
+                        url('nature.jpg') no-repeat center center fixed;
+            background-size: cover;
         }
 
         /* Contact Card Styles */
@@ -152,49 +143,32 @@
             transform: rotate(15deg) scale(1.1);
         }
 
+        /* Spinner Animation */
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .animate-spin {
+            animation: spin 1s linear infinite;
+        }
+
         /* Responsive background */
         @media (max-width: 768px) {
             body#contact-page {
-                background-attachment: scroll !important;
+                background-attachment: scroll;
+                padding-top: 70px; /* Sesuaikan untuk mobile */
             }
-        }
-        
-        /* Print styles */
-        @media print {
-            body#contact-page {
-                background: white !important;
-                color: black !important;
-            }
-            .contact-card {
-                background: white !important;
-                color: black !important;
-                box-shadow: none !important;
-            }
-            .navbar, footer {
-                display: none;
-            }
-        }
-        
-        /* Fallback for browsers that don't support backdrop-filter */
-        @supports not (backdrop-filter: blur(10px)) {
+            
             .navbar {
-                background: rgba(255, 255, 255, 0.98);
-            }
-            .dark .navbar {
-                background: rgba(45, 55, 72, 0.98);
-            }
-            .contact-card {
-                background: rgba(30, 30, 40, 0.95);
-            }
-            .dark .contact-card {
-                background: rgba(30, 30, 50, 0.95);
+                padding: 0.5rem 0;
             }
         }
     </style>
 </head>
 <body id="contact-page" class="font-inter">
-    <!-- Header/Navbar -->
-    <header class="fixed w-full navbar shadow-sm z-50">
+    <!-- Header/Navbar yang Fixed -->
+    <header class="navbar">
         <div class="container mx-auto px-4">
             <div class="flex justify-between items-center py-3">
                 <!-- Home Button with Icon -->
@@ -217,8 +191,8 @@
                             <i class="bi bi-person-lines-fill mr-2"></i> About
                         </a>
                         <a href="projects.html" class="nav-link px-4 py-2 text-gray-700 hover:text-indigo-600 flex items-center dark:text-gray-300 dark:hover:text-indigo-400">
-                            <i class="bi bi-folder-fill mr-2"></i> projects
-                            </a>
+                            <i class="bi bi-folder-fill mr-2"></i> Projects
+                        </a>
                         <a href="experience.html" class="nav-link px-4 py-2 text-gray-700 hover:text-indigo-600 flex items-center dark:text-gray-300 dark:hover:text-indigo-400">
                             <i class="bi bi-briefcase-fill mr-2"></i> Experience
                         </a>
@@ -276,8 +250,8 @@
         </div>
     </header>
 
-    <!-- Contact Section -->
-    <section class="pt-32 pb-20">
+    <!-- Contact Section dengan padding untuk navbar fixed -->
+    <section class="pt-20 pb-20"> <!-- Mengurangi pt-32 menjadi pt-20 karena ada padding body -->
         <div class="container mx-auto px-4">
             <div class="text-center mb-16">
                 <h2 class="text-3xl md:text-4xl font-bold text-white mb-4 dark:text-white">Hubungi Saya</h2>
@@ -290,25 +264,34 @@
                 <div class="lg:w-1/2">
                     <div class="rounded-xl shadow-md contact-card p-8 h-full">
                         <h3 class="text-xl font-bold text-white mb-6 dark:text-white">Kirim Pesan</h3>
-                        <form id="contact-form" class="space-y-4">
+                        <form action="https://formsubmit.co/n.padilah022@gmail.com" method="POST" class="space-y-4">
+                            <!-- FormSubmit Configuration -->
+                            <input type="hidden" name="_next" value="https://yourwebsite.com/thank-you.html">
+                            <input type="hidden" name="_captcha" value="false">
+                            <input type="hidden" name="_template" value="table">
+                            <input type="text" name="_honey" style="display:none">
+                            
                             <div>
                                 <label for="name" class="block text-sm font-medium text-gray-300 mb-1 dark:text-gray-300">Nama Lengkap</label>
-                                <input type="text" id="name" class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition text-white dark:bg-gray-600 dark:border-gray-500" placeholder="Nama Anda">
+                                <input type="text" id="name" name="name" required class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition text-white dark:bg-gray-600 dark:border-gray-500" placeholder="Nama Anda">
                             </div>
                             <div>
                                 <label for="email" class="block text-sm font-medium text-gray-300 mb-1 dark:text-gray-300">Alamat Email</label>
-                                <input type="email" id="email" class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition text-white dark:bg-gray-600 dark:border-gray-500" placeholder="email@contoh.com">
+                                <input type="email" id="email" name="email" required class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition text-white dark:bg-gray-600 dark:border-gray-500" placeholder="email@contoh.com">
                             </div>
                             <div>
                                 <label for="subject" class="block text-sm font-medium text-gray-300 mb-1 dark:text-gray-300">Subjek</label>
-                                <input type="text" id="subject" class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition text-white dark:bg-gray-600 dark:border-gray-500" placeholder="Subjek pesan">
+                                <input type="text" id="subject" name="subject" required class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition text-white dark:bg-gray-600 dark:border-gray-500" placeholder="Subjek pesan">
                             </div>
                             <div>
                                 <label for="message" class="block text-sm font-medium text-gray-300 mb-1 dark:text-gray-300">Pesan</label>
-                                <textarea id="message" rows="4" class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition text-white dark:bg-gray-600 dark:border-gray-500" placeholder="Tulis pesan Anda"></textarea>
+                                <textarea id="message" name="message" rows="4" required class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition text-white dark:bg-gray-600 dark:border-gray-500" placeholder="Tulis pesan Anda"></textarea>
                             </div>
-                            <button type="submit" class="w-full bg-gradient-to-r from-indigo-600 to-purple-600 text-white py-3 rounded-lg font-medium hover:from-indigo-700 hover:to-purple-700 transition shadow-md">
-                                Kirim Pesan
+                            <button type="submit" class="w-full bg-gradient-to-r from-indigo-600 to-purple-600 text-white py-3 rounded-lg font-medium hover:from-indigo-700 hover:to-purple-700 transition shadow-md flex items-center justify-center">
+                                <span id="submit-text">Kirim Pesan</span>
+                                <div id="submit-spinner" class="ml-2 hidden">
+                                    <div class="animate-spin rounded-full h-5 w-5 border-b-2 border-white"></div>
+                                </div>
                             </button>
                         </form>
                         <div id="form-message" class="mt-4 text-center hidden"></div>
@@ -316,54 +299,55 @@
                 </div>
                 
                 <!-- Contact Info -->
-             <div class="lg:w-1/2">
-    <div class="rounded-xl shadow-md contact-card p-8 h-full">
-        <h3 class="text-xl font-bold text-white mb-6 dark:text-white">Informasi Kontak</h3>
-        <div class="space-y-6">
-            <div class="flex items-start">
-                <div class="bg-indigo-100 rounded-full w-12 h-12 flex items-center justify-center mr-4 flex-shrink-0 dark:bg-indigo-900">
-                    <i class="bi bi-telephone text-indigo-600 text-lg dark:text-indigo-300"></i>
+                <div class="lg:w-1/2">
+                    <div class="rounded-xl shadow-md contact-card p-8 h-full">
+                        <h3 class="text-xl font-bold text-white mb-6 dark:text-white">Informasi Kontak</h3>
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="bg-indigo-100 rounded-full w-12 h-12 flex items-center justify-center mr-4 flex-shrink-0 dark:bg-indigo-900">
+                                    <i class="bi bi-telephone text-indigo-600 text-lg dark:text-indigo-300"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-sm font-medium text-gray-300 mb-1 dark:text-gray-300">Telepon</h4>
+                                    <p class="text-white dark:text-gray-200">+62 (813) 1138-4266</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-indigo-100 rounded-full w-12 h-12 flex items-center justify-center mr-4 flex-shrink-0 dark:bg-indigo-900">
+                                    <i class="bi bi-envelope text-indigo-600 text-lg dark:text-indigo-300"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-sm font-medium text-gray-300 mb-1 dark:text-gray-300">Email</h4>
+                                    <p class="text-white dark:text-gray-200">n.padilah022@gmail.com</p>
+                                </div>
+                            </div>
+                            
+                            <!-- Peta Google Maps -->
+                            <div class="map-container">
+                                <h4 class="font-medium text-gray-600 dark:text-gray-300 mb-3">Lokasi</h4>
+                                <div class="rounded-lg overflow-hidden shadow-lg border border-gray-200 dark:border-gray-700">
+                                    <iframe
+                                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.521260322283!2d106.85435631529447!3d-6.194741395493371!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f5d2e764b12d%3A0x3d2ad6e1e0e9bcc8!2sMekar%20Bakti%2C%20Kec.%20Panongan%2C%20Kabupaten%20Tangerang%2C%20Banten%2015710!5e0!3m2!1sen!2sid!4v1620000000000!5m2!1sen!2sid"
+                                        width="100%"
+                                        height="250"
+                                        style="border:0;"
+                                        allowfullscreen=""
+                                        loading="lazy"
+                                        class="dark:grayscale-[30%]"
+                                        referrerpolicy="no-referrer-when-downgrade">
+                                    </iframe>
+                                </div>
+                                <p class="mt-2 text-sm text-gray-600 dark:text-gray-400 flex items-center">
+                                    <i class="bi bi-geo-alt-fill text-indigo-500 mr-2"></i>
+                                    Mekar Bakti, Panongan, Kabupaten Tangerang, Banten 15710
+                                </p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div>
-                    <h4 class="text-sm font-medium text-gray-300 mb-1 dark:text-gray-300">Telepon</h4>
-                    <p class="text-white dark:text-gray-200">+62 (813) 1138-4266</p>
-                </div>
-            </div>
-            
-            <div class="flex items-start">
-                <div class="bg-indigo-100 rounded-full w-12 h-12 flex items-center justify-center mr-4 flex-shrink-0 dark:bg-indigo-900">
-                    <i class="bi bi-envelope text-indigo-600 text-lg dark:text-indigo-300"></i>
-                </div>
-                <div>
-                    <h4 class="text-sm font-medium text-gray-300 mb-1 dark:text-gray-300">Email</h4>
-                    <p class="text-white dark:text-gray-200">n.padilah022@gmail.com</p>
-                </div>
-            </div>
-            
-            <!-- Peta Google Maps yang Benar -->
-            <div class="map-container">
-                <h4 class="font-medium text-gray-600 dark:text-gray-300 mb-3">Lokasi</h4>
-                <div class="rounded-lg overflow-hidden shadow-lg border border-gray-200 dark:border-gray-700">
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.521260322283!2d106.85435631529447!3d-6.194741395493371!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f5d2e764b12d%3A0x3d2ad6e1e0e9bcc8!2sMekar%20Bakti%2C%20Kec.%20Panongan%2C%20Kabupaten%20Tangerang%2C%20Banten%2015710!5e0!3m2!1sen!2sid!4v1620000000000!5m2!1sen!2sid"
-                        width="100%"
-                        height="250"
-                        style="border:0;"
-                        allowfullscreen=""
-                        loading="lazy"
-                        class="dark:grayscale-[30%]"
-                        referrerpolicy="no-referrer-when-downgrade">
-                    </iframe>
-                </div>
-                <p class="mt-2 text-sm text-gray-600 dark:text-gray-400 flex items-center">
-                    <i class="bi bi-geo-alt-fill text-indigo-500 mr-2"></i>
-                    Mekar Bakti, Panongan, Kabupaten Tangerang, Banten 15710
-                </p>
             </div>
         </div>
-    </div>
-</div>
-
     </section>
 
     <!-- Footer -->
@@ -378,10 +362,10 @@
                     <a href="https://www.linkedin.com/in/nanda-padilah-6a5b6434a" class="text-gray-300 hover:text-indigo-300 transition">
                         <i class="bi bi-linkedin text-xl"></i>
                     </a>
-                    <a href="+62 813-1138-4266" class="text-gray-300 hover:text-indigo-300 transition">
+                    <a href="https://wa.me/6281311384266" class="text-gray-300 hover:text-indigo-300 transition">
                         <i class="bi bi-whatsapp text-xl"></i>
                     </a>
-                    <a href="@Fadilltx" class="text-gray-300 hover:text-indigo-300 transition">
+                    <a href="https://t.me/Fadilltx" class="text-gray-300 hover:text-indigo-300 transition">
                         <i class="bi bi-telegram text-xl"></i>
                     </a>
                     <a href="https://www.instagram.com/emerald.tx/" class="text-gray-300 hover:text-indigo-300 transition">
@@ -463,9 +447,7 @@
         }
 
         if (mobileThemeToggle) {
-            mobileThemeToggle.addEventListener('click', () => {
-                toggleTheme();
-            });
+            mobileThemeToggle.addEventListener('click', toggleTheme);
         }
 
         // Mobile Menu Toggle
@@ -485,36 +467,21 @@
             });
         }
 
-        // Contact form handling
-        const contactForm = document.getElementById('contact-form');
-        const formMessage = document.getElementById('form-message');
+        // Form loading state
+        const contactForm = document.querySelector('form');
+        const submitText = document.getElementById('submit-text');
+        const submitSpinner = document.getElementById('submit-spinner');
         
         if (contactForm) {
-            contactForm.addEventListener('submit', function(e) {
-                e.preventDefault();
+            contactForm.addEventListener('submit', function() {
+                submitText.textContent = "Mengirim...";
+                submitSpinner.classList.remove('hidden');
                 
-                const name = document.getElementById('name').value;
-                const email = document.getElementById('email').value;
-                const message = document.getElementById('message').value;
-                
-                if (name && email && message) {
-                    // Simulate form submission
-                    formMessage.textContent = 'Terima kasih atas pesan Anda! Saya akan segera menghubungi Anda.';
-                    formMessage.classList.remove('hidden', 'text-red-500');
-                    formMessage.classList.add('text-green-500');
-                    
-                    // Reset form
-                    contactForm.reset();
-                } else {
-                    formMessage.textContent = 'Silakan isi semua bidang yang diperlukan.';
-                    formMessage.classList.remove('hidden', 'text-green-500');
-                    formMessage.classList.add('text-red-500');
-                }
-                
-                // Hide message after 5 seconds
+                // Reset after 3 seconds (just for visual, FormSubmit will handle actual submission)
                 setTimeout(() => {
-                    formMessage.classList.add('hidden');
-                }, 5000);
+                    submitText.textContent = "Kirim Pesan";
+                    submitSpinner.classList.add('hidden');
+                }, 3000);
             });
         }
     </script>
