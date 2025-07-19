@@ -1,0 +1,7 @@
+/* Hanya untuk class custom tambahan */
+@layer components {
+  /* Custom class Anda bisa ditambahkan di sini */
+  .hero-bg {
+    background: linear-gradient(rgba(0, 0, 0, 0.8), url('nature.jpg') no-repeat center center;
+  }
+}
