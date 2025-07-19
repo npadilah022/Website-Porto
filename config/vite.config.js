@@ -1,21 +1,14 @@
 // config/vite.config.js
-<<<<<<< HEAD
 import { defineConfig } from 'vite';
 import { resolve } from 'path';
 import { fileURLToPath } from 'url';
 import imageOptimizer from 'vite-plugin-image-optimizer';
 
 const __dirname = fileURLToPath(new URL('.', import.meta.url));
-=======
-import { defineConfig } from 'vite'
-import { resolve } from 'path'
-import { ViteImageOptimizer } from 'vite-plugin-image-optimizer'
->>>>>>> 68944d1d7ae17e1464ed01f5320bfc84233b1024
 
 export default defineConfig({
   root: resolve(__dirname, '../src'),
   publicDir: resolve(__dirname, '../public'),
-<<<<<<< HEAD
   base: './',
 
   server: {
@@ -30,16 +23,10 @@ export default defineConfig({
   build: {
     outDir: resolve(__dirname, '../dist'),
     emptyOutDir: true,
-=======
-  build: {
-    emptyOutDir: true,
-    outDir: resolve(__dirname, '../dist'),
->>>>>>> 68944d1d7ae17e1464ed01f5320bfc84233b1024
     rollupOptions: {
       input: {
         main: resolve(__dirname, '../src/pages/index.html'),
         about: resolve(__dirname, '../src/pages/about.html')
-<<<<<<< HEAD
       },
       output: {
         assetFileNames: (assetInfo) => {
@@ -104,16 +91,3 @@ export default defineConfig({
     ]
   }
 });
-=======
-      }
-    }
-  },
-  plugins: [
-    ViteImageOptimizer({
-      includePublic: true,
-      png: { quality: 80 },
-      jpeg: { quality: 85 }
-    })
-  ]
-})
->>>>>>> 68944d1d7ae17e1464ed01f5320bfc84233b1024
