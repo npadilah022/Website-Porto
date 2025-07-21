@@ -215,7 +215,67 @@
             opacity: 1;
             transform: translateY(0);
         }
-        
+
+        /* Improved Education Year with Logo */
+        .education-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 12px;
+            gap: 10px;
+        }
+
+        .year-with-logo {
+            display: flex;
+            align-items: center;
+            background-color: rgba(99, 102, 241, 0.1);
+            border-radius: 20px;
+            padding: 4px 12px 4px 8px;
+            transition: all 0.3s ease;
+        }
+
+        .year-with-logo:hover {
+            background-color: rgba(99, 102, 241, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .institution-logo {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            object-fit: contain;
+            margin-right: 8px;
+            background-color: white;
+            padding: 3px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .year-badge {
+            padding: 4px 12px;
+            background-color: #e0e7ff;
+            color: #4f46e5;
+            border-radius: 16px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            white-space: nowrap;
+        }
+
+        .dark .year-badge {
+            background-color: rgba(79, 70, 229, 0.2);
+            color: #a5b4fc;
+        }
+
+        @media (max-width: 640px) {
+            .education-header {
+                flex-wrap: wrap;
+            }
+            
+            .institution-logo {
+                width: 32px;
+                height: 32px;
+            }
+        }
+
         @keyframes pulse {
             0% {
                 box-shadow: 0 0 0 0 rgba(99, 102, 241, 0.7);
@@ -394,7 +454,7 @@
                         </p>
                     </div>
                     
-                    <!-- Moto Saya Column (tanpa foto) -->
+                    <!-- Moto Saya Column -->
                     <div class="profile-badge bg-indigo-50 p-6 rounded-xl dark:bg-gray-700">
                         <h3 class="text-xl font-bold text-gray-800 mb-4 dark:text-white text-center">Moto Hidup</h3>
                         <div class="bg-white p-4 rounded-lg mb-4 dark:bg-gray-600">
@@ -425,7 +485,7 @@
                 </div>
             </div>
 
-            <!-- Education Section -->
+            <!-- Education Section with Improved Logo Placement -->
             <div class="glass-card p-8">
                 <div class="flex items-center mb-6">
                     <div class="w-12 h-12 rounded-full bg-indigo-100 flex items-center justify-center mr-4 dark:bg-gray-700 floating">
@@ -435,9 +495,12 @@
                 </div>
                 
                 <div class="timeline-item">
-                    <div class="flex items-center mb-2">
-                        <i class="bi bi-book text-indigo-600 mr-2 dark:text-indigo-400"></i>
-                        <span class="px-3 py-1 bg-indigo-100 text-indigo-600 rounded-full text-sm dark:bg-gray-700 dark:text-indigo-400">2022 - Sekarang</span>
+                    <div class="education-header">
+                        <div class="year-with-logo">
+                            <img src="ppi.jpg" alt="Logo STIE PPI" class="institution-logo">
+                            <span class="year-badge">2022 - Sekarang</span>
+                        </div>
+                        <i class="bi bi-book text-indigo-600 dark:text-indigo-400"></i>
                     </div>
                     <h4 class="text-lg font-semibold text-gray-800 mb-2 dark:text-white">S1 Akuntansi</h4>
                     <p class="text-indigo-600 font-medium mb-2 dark:text-indigo-400">Sekolah Tinggi Ilmu Ekonomi PPI Citra Raya</p>
@@ -445,9 +508,12 @@
                 </div>
                 
                 <div class="timeline-item">
-                    <div class="flex items-center mb-2">
-                        <i class="bi bi-book text-indigo-600 mr-2 dark:text-indigo-400"></i>
-                        <span class="px-3 py-1 bg-indigo-100 text-indigo-600 rounded-full text-sm dark:bg-gray-700 dark:text-indigo-400">2019 - 2022</span>
+                    <div class="education-header">
+                        <div class="year-with-logo">
+                            <img src="cr.jpg" alt="Logo SMKN 1" class="institution-logo">
+                            <span class="year-badge">2019 - 2022</span>
+                        </div>
+                        <i class="bi bi-book text-indigo-600 dark:text-indigo-400"></i>
                     </div>
                     <h4 class="text-lg font-semibold text-gray-800 mb-2 dark:text-white">Teknik Elektronika Industri</h4>
                     <p class="text-indigo-600 font-medium mb-2 dark:text-indigo-400">SMK Negeri 1 Kabupaten Tangerang</p>
@@ -455,9 +521,12 @@
                 </div>
                 
                 <div class="timeline-item">
-                    <div class="flex items-center mb-2">
-                        <i class="bi bi-award text-indigo-600 mr-2 dark:text-indigo-400"></i>
-                        <span class="px-3 py-1 bg-indigo-100 text-indigo-600 rounded-full text-sm dark:bg-gray-700 dark:text-indigo-400">Maret 2022</span>
+                    <div class="education-header">
+                        <div class="year-with-logo">
+                            <img src="gje.jpg" alt="Logo Global Jaya" class="institution-logo">
+                            <span class="year-badge">Maret 2022</span>
+                        </div>
+                        <i class="bi bi-award text-indigo-600 dark:text-indigo-400"></i>
                     </div>
                     <h4 class="text-lg font-semibold text-gray-800 mb-2 dark:text-white">Uji Kompetensi Keahlian</h4>
                     <p class="text-indigo-600 font-medium mb-2 dark:text-indigo-400">PT. Global Jaya Elektronik</p>
@@ -467,7 +536,7 @@
         </div>
     </section>
 
-    <!-- Corrected Footer -->
+    <!-- Footer -->
     <footer class="footer-dark w-full py-12 text-white">
         <div class="container mx-auto px-4 relative z-10">
             <div class="flex flex-col md:flex-row justify-between items-center">
