@@ -978,16 +978,16 @@
         // Project data
         const projects = {
             'financial-dashboard': {
-                title: 'Financial Analytics Dashboard',
-                image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80',
-                description: 'A comprehensive financial analytics dashboard designed for financial institutions to visualize complex financial data in real-time.',
+                title: 'Handsanitizer Otomatis',
+                image: 'handsanitizer.jpg',
+                description: 'Sebuah project sederhana menggunakan Motor DC 5V',
                 details: [
-                    'Real-time data visualization with D3.js',
-                    'Customizable dashboards with drag-and-drop components',
-                    'Predictive financial modeling',
-                    'Role-based access control'
+                    'Pada Sensor IR Obstacle Avoidance memiliki 2 hal penting pada bagian lampu infrared memancarkan cahaya infrared sementara infrared photodiode menangkap cahaya yang telah dipancarkan.',
+                    'jika ada sebuah benda atau tangan pada muka sensor maka cahaya infrared akan memantul melalui benda tersebut dan pantulan cahaya diterima oleh photodiode.',
+                    'Tegangan pada output sensor adalah 0V sedangkan pada Emitor dan Basis transistor adalah 5V yang mengakibatkan adanya arus yang mengalir dari emitor dan basis.',
+                    'Kemudian Transistor PNP bekerja dari arus emitor mengalir ke collector melewati pompa sehingga pompa pun berputar, Ketika pompa berputar maka air dalam wadah akan keluar melalui selang. Dengan demikian tidak ada perbedaan potensial antara emitor dan basis transistor, sehingga tidak ada arus yang mengalir dari emitor ke basis dan transistor PNP tidak akan bekerja mengakibatkan pompa tidak berputar karena tidak mendapatkan arus listrik.'
                 ],
-                technologies: ['React', 'Redux', 'Tailwind CSS', 'D3.js'],
+                technologies: ['', 'Pompa air celup Motor DC 5V, selang bening ukuran 1/2 (1.2cm/12mm), Wadah, dan Kabel NYA', 'Sensor Infrared Obstacle Avoidance', 'Resistor 1K Ohm dan Transistor PNP tipe TIP 32C.'],
                 link: '#'
             },
             'ecommerce-design': {
@@ -1004,16 +1004,16 @@
                 link: '#'
             },
             'finance-tracker': {
-                title: 'Personal Finance Tracker',
-                image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1115&q=80',
-                description: 'A mobile-first personal finance application that helps users track expenses.',
+                title: 'Lampu Flip-FLop',
+                image: 'flipflop.jpg',
+                description: 'Lampu kedap-kedip sederhana menggunakan PCB Board',
                 details: [
-                    'Automatic bank transaction sync',
-                    'Customizable budget categories',
-                    'Investment portfolio tracking',
-                    'Financial goal setting'
+                    'Pada rangkaian flip flop dua transistor ketika rangkaian menerima tegangan, maka salah satu dari transistor akan dalam kondisi ON dan yang lainnya OFF.',
+                    'Kondisi ON dipengaruhi oleh nilai muatan pada elco, saat elco melepas muatan listriknya maka transistor yang terhubung akan mengalami kondisi ON (sementara).',
+                    'Pada saat transistor kondisi ON secara bersamaan elco (yang kakinya terhubung kolektor) akan mengisi muatan listrik.Dan kondisi akan berlawanan pada salah satu transistor lainnya, alias transistor lain akan berada pada kondisi OFF.',
+                    'Kemudian hal ini terjadi secara berulang dan terus menerus membuat LED berkedip atau disebut LED flip flop.'
                 ],
-                technologies: ['Vue.js', 'Firebase', 'Tailwind CSS'],
+                technologies: [' Pcb Board, Kabel, 2 Buah Infrared LED dan 2  Buah Transistor BC 547', ' 2 Buah Elco 100 Mikrofarad, 2 Buah Resistor 470 Ohm dan 2 Buah Resistor 10K Ohm', '1 Buah Switch ON OF dan Power Supply 9V'],
                 link: '#'
             },
             'stock-analysis': {
@@ -1030,16 +1030,16 @@
                 link: '#'
             },
             'portfolio-template': {
-                title: 'Developer Portfolio Platform',
-                image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80',
-                description: 'Modern portfolio template for developers with interactive elements.',
+                title: 'Power Bank 9V',
+                image: 'powerbank.jpg',
+                description: 'Power Bank sederhana menggunakan Baterai Lithium Ion 9V',
                 details: [
-                    'Responsive design',
-                    'Project showcase section',
-                    'Skills visualization',
+                    'Sambung terlebih dahulu baterai dengan timah panas dengan cara di solder 3 kawat pada bagian atas dan Bawah agar menyatu satu sama lain.',
+                    'kemudian solder untuk menyambung 2 kabel atas dan bawah pada baterai, setelah itu sambung kabel atas dan bawah dari baterai ke modul power bank B+ dan B-.',
+                    'dan proses akhir menyambungkan kabel charger yang sudah terpasang pada smartphone dengan connector modul power bank.',
                     'Dark/light mode'
                 ],
-                technologies: ['HTML', 'CSS', 'JavaScript'],
+                technologies: ['Baterai 9V Li-Ion', 'Modul Power Bank Step Up 5V 1 Ampere', 'Kabel dan Wadah'],
                 link: '#'
             },
             'banking-app': {
