@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="id" class="light">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -57,48 +57,7 @@
             background-color: #4a5568;
         }
 
-        /* Tombol Dark Mode */
-        .theme-toggle {
-            background: #e2e8f0;
-            border-radius: 50%;
-            cursor: pointer;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 40px;
-            width: 40px;
-            transition: all 0.3s;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        }
-        
-        .dark .theme-toggle {
-            background: #4a5568;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-        }
-        
-        .theme-toggle:hover {
-            transform: rotate(15deg) scale(1.1);
-        }
-
-        /* BACKGROUND IMAGE KHUSUS UNTUK EXPERIENCE PAGE */
-        body#experience-page {
-            background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), 
-                        url('projects.jpg') no-repeat center center fixed !important;
-            background-size: cover !important;
-            background-attachment: fixed !important;
-            background-position: center !important;
-            background-repeat: no-repeat !important;
-            font-family: 'Inter', sans-serif;
-            min-height: 100vh;
-            color: #f3f4f6;
-        }
-
-        /* OVERLAY FOR CONTENT */
-        .content-overlay {
-            position: relative;
-            z-index: 1;
-        }
-
+        /* Navbar Styles */
         .navbar {
             transition: all 0.3s ease;
             backdrop-filter: blur(10px);
@@ -118,6 +77,14 @@
             color: #cbd5e0;
         }
         
+        /* Warna teks Experience tetap biru di dark mode */
+        .nav-link.experience {
+            color: #6366f1 !important;
+        }
+        .dark .nav-link.experience {
+            color: #818cf8 !important;
+        }
+        
         .nav-link::after {
             content: '';
             position: absolute;
@@ -133,15 +100,21 @@
         .nav-link.active::after {
             width: 100%;
         }
-        
-        .home-btn {
-            transition: transform 0.3s ease;
+
+        /* BACKGROUND IMAGE KHUSUS UNTUK EXPERIENCE PAGE */
+        body#experience-page {
+            background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), 
+                        url('projects.jpg') no-repeat center center fixed !important;
+            background-size: cover !important;
+            background-attachment: fixed !important;
+            background-position: center !important;
+            background-repeat: no-repeat !important;
+            font-family: 'Inter', sans-serif;
+            min-height: 100vh;
+            color: #f3f4f6;
         }
-        .home-btn:hover {
-            transform: translateY(-2px);
-        }
-        
-        /* ANIMASI YANG DIPERBAIKI (SAMA SEPERTI DI SKILLS.HTML) */
+
+        /* ANIMASI */
         @keyframes fadeInUp {
             from {
                 opacity: 0;
@@ -180,189 +153,11 @@
             background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
         }
         
-        .glass-card h3,
-        .glass-card p {
-            color: #f9fafb;
-        }
-        
-        .dark .glass-card h3,
-        .dark .glass-card p {
-            color: #e2e8f0;
-        }
-        
-        .glass-card .text-indigo-600 {
-            color: #a5b4fc;
-        }
-        
-        .dark .glass-card .text-indigo-600 {
-            color: #a5b4fc;
-        }
-        
         .section-padding {
             padding-top: 7rem;
             padding-bottom: 5rem;
         }
         
-        /* Fix for mobile menu */
-        #mobile-menu {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease;
-        }
-        #mobile-menu.active {
-            max-height: 100vh;
-            overflow-y: auto;
-        }
-        
-        /* Responsive background */
-        @media (max-width: 768px) {
-            body#experience-page {
-                background-attachment: scroll !important;
-            }
-        }
-        
-        /* Print styles */
-        @media print {
-            body#experience-page {
-                background: white !important;
-                color: black !important;
-            }
-            .glass-card {
-                background: white !important;
-                color: black !important;
-                box-shadow: none !important;
-            }
-            .navbar, footer {
-                display: none;
-            }
-        }
-        
-        /* Fallback for browsers that don't support backdrop-filter */
-        @supports not (backdrop-filter: blur(10px)) {
-            .navbar {
-                background: rgba(255, 255, 255, 0.98);
-            }
-            .dark .navbar {
-                background: rgba(45, 55, 72, 0.98);
-            }
-            .glass-card {
-                background: rgba(30, 30, 40, 0.95);
-            }
-            .dark .glass-card {
-                background: rgba(30, 30, 50, 0.95);
-            }
-        }
-        
-        /* TEXT CONTRAST ENHANCEMENT */
-        .text-contrast {
-            color: #ffffff;
-            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
-        }
-        
-        .dark .text-contrast {
-            color: #ffffff;
-        }
-        
-        .tech-badge {
-            transition: all 0.2s ease;
-        }
-        .tech-badge:hover {
-            transform: translateY(-2px);
-        }
-        
-        .dark .tech-badge {
-            background-color: #4a5568;
-            color: #e2e8f0;
-        }
-        
-        /* ANIMASI TEKS BARU */
-        .animated-text {
-            transition: all 0.4s ease;
-            position: relative;
-        }
-        
-        .glass-card:hover .animated-text {
-            transform: translateY(-3px);
-            text-shadow: 0 4px 15px rgba(139, 92, 246, 0.5);
-        }
-        
-        .animated-paragraph {
-            transition: all 0.5s ease;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .glass-card:hover .animated-paragraph {
-            color: #ffffff;
-            transform: scale(1.01);
-        }
-        
-        .animated-paragraph::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(139, 92, 246, 0.1), transparent);
-            transition: all 0.8s ease;
-        }
-        
-        .glass-card:hover .animated-paragraph::before {
-            left: 100%;
-        }
-        
-        .animated-highlight {
-            background: linear-gradient(120deg, #6366f1, #8b5cf6);
-            background-size: 200% 200%;
-            background-clip: text;
-            -webkit-background-clip: text;
-            color: transparent;
-            animation: gradientShift 4s ease infinite;
-            transition: all 0.3s ease;
-        }
-        
-        @keyframes gradientShift {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-        
-        .glass-card:hover .animated-highlight {
-            animation: gradientShift 2.5s ease infinite;
-            text-shadow: 0 0 10px rgba(139, 92, 246, 0.5);
-        }
-        
-        .animated-border {
-            position: relative;
-            padding-bottom: 5px;
-        }
-        
-        .animated-border::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: linear-gradient(90deg, #6366f1, #8b5cf6);
-            transition: width 0.5s ease;
-        }
-        
-        .glass-card:hover .animated-border::after {
-            width: 100%;
-        }
-        
-        .floating-text {
-            animation: float 4s ease-in-out infinite;
-        }
-        
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-8px); }
-            100% { transform: translateY(0px); }
-        }
-
         /* Logo perusahaan */
         .company-logo {
             width: 396px;
@@ -377,9 +172,32 @@
         .glass-card:hover .company-logo {
             transform: scale(1.02);
         }
+
+        /* Tombol Dark Mode */
+        .theme-toggle {
+            background: #e2e8f0;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 40px;
+            width: 40px;
+            transition: all 0.3s;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .dark .theme-toggle {
+            background: #4a5568;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+        
+        .theme-toggle:hover {
+            transform: rotate(15deg) scale(1.1);
+        }
     </style>
 </head>
-<body id="experience-page" class="font-inter light">
+<body id="experience-page" class="font-inter">
     <!-- Header -->
     <header class="fixed w-full navbar shadow-sm z-50">
         <div class="container mx-auto px-4">
@@ -403,10 +221,10 @@
                     <a href="projects.html" class="nav-link px-4 py-2 text-gray-700 hover:text-indigo-600 flex items-center dark:text-gray-300 dark:hover:text-indigo-400">
                         <i class="bi bi-folder-fill mr-2"></i> Projects
                     </a>
-                    <a href="experience.html" class="nav-link px-4 py-2 text-indigo-600 hover:text-indigo-800 flex items-center dark:text-indigo-400">
+                    <a href="experience.html" class="nav-link experience px-4 py-2 flex items-center font-medium">
                         <i class="bi bi-briefcase-fill mr-2"></i> Experience
                     </a>
-                    <a href="certificate.html" class="nav-link relative px-4 py-2 text-gray-700 hover:text-indigo-600 flex items-center dark:text-gray-300 dark:hover:text-indigo-400">
+                    <a href="certificate.html" class="nav-link px-4 py-2 text-gray-700 hover:text-indigo-600 flex items-center dark:text-gray-300 dark:hover:text-indigo-400">
                         <i class="bi bi-award-fill mr-2"></i> Certificate
                     </a>
                     <a href="skills.html" class="nav-link px-4 py-2 text-gray-700 hover:text-indigo-600 flex items-center dark:text-gray-300 dark:hover:text-indigo-400">
@@ -446,6 +264,9 @@
                 <a href="experience.html" class="block py-3 px-4 text-indigo-600 bg-indigo-50 rounded-lg transition flex items-center font-medium dark:text-indigo-400 dark:bg-gray-700">
                     <i class="bi bi-briefcase-fill mr-3"></i> Experience
                 </a>
+                <a href="certificate.html" class="block py-3 px-4 text-gray-700 hover:bg-indigo-50 rounded-lg transition flex items-center dark:text-gray-300 dark:hover:bg-gray-700">
+                    <i class="bi bi-award-fill mr-3"></i> Certificate
+                </a>
                 <a href="skills.html" class="block py-3 px-4 text-gray-700 hover:bg-indigo-50 rounded-lg transition flex items-center dark:text-gray-300 dark:hover:bg-gray-700">
                     <i class="bi bi-tools mr-3"></i> Skills
                 </a>
@@ -457,11 +278,10 @@
     </header>
 
     <!-- Experience Section -->
-    <section class="pt-32 pb-20 section-padding content-overlay">
+    <section class="pt-32 pb-20 section-padding">
         <div class="container mx-auto px-4">
             <div class="text-center mb-16 animate-card" style="animation-delay: 0.1s;">
-                <h2 class="text-3xl md:text-4xl font-bold text-contrast mb-4 floating-text">Pengalaman Profesional</h2>
-                <div class="w-24 h-1 bg-gradient-to-r from-indigo-500 to-purple-500 mx-auto mb-6"></div>
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-2">Pengalaman Profesional</h2>
                 <p class="text-lg text-gray-300 max-w-2xl mx-auto">Perjalanan saya melalui berbagai bidang</p>
             </div>
             
@@ -474,17 +294,17 @@
                                 <div class="w-12 h-12 gradient-bg rounded-xl flex items-center justify-center mr-4 shadow-md">
                                     <i class="bi bi-pc-display-horizontal text-white text-xl"></i>
                                 </div>
-                                <h3 class="text-xl font-semibold animated-text">Magang Administrasi Keuangan</h3>
+                                <h3 class="text-xl font-semibold">Magang Administrasi Keuangan</h3>
                             </div>
-                            <span class="px-3 py-1 bg-indigo-100 text-indigo-600 rounded-full text-sm dark:bg-indigo-900 dark:text-indigo-200 animated-highlight">Februari - Mei 2025</span>
+                            <span class="px-3 py-1 bg-indigo-100 text-indigo-600 rounded-full text-sm dark:bg-indigo-900 dark:text-indigo-200">Februari - Mei 2025</span>
                         </div>
-                        <p class="text-indigo-300 mb-2 font-medium animated-border">CV. Putra Mandiri Teknik</p>
+                        <p class="text-indigo-300 mb-2 font-medium">CV. Putra Mandiri Teknik</p>
                         <!-- Logo perusahaan -->
                         <img src="pmt.png" alt="Logo CV. Putra Mandiri Teknik" class="company-logo">
-                        <p class="mb-4 dark:text-gray-300 animated-paragraph">Mengoperasikan software Accurate 4 perusahaan, serta Microsoft Excel dan Word. Input penerimaan penjualan, pembayaran. Input petty cash keluar masuk, input buku kas keluar masuk dengan penyertaan PPN dan non PPN pada 4 perusahaan. Check histori transaksi pembayaran dan penerimaan pada kas dan bank serta dengan buku bank, check rincian daftar pembayaran, sortir rincian penjualan per pelanggan dan ringkasan pembayaran untuk cetak bukti. Melakukan rekonsiliasi bank dan input laporan kas setiap akhir bulan, rekap hutang beredar, serta membuat voucher pengeluaran dan penerimaan kas pada 2 perusahaan.</p>
+                        <p class="mb-4 dark:text-gray-300">Mengoperasikan software Accurate 4 perusahaan, serta Microsoft Excel dan Word. Input penerimaan penjualan, pembayaran. Input petty cash keluar masuk, input buku kas keluar masuk dengan penyertaan PPN dan non PPN pada 4 perusahaan. Check histori transaksi pembayaran dan penerimaan pada kas dan bank serta dengan buku bank, check rincian daftar pembayaran, sortir rincian penjualan per pelanggan dan ringkasan pembayaran untuk cetak bukti. Melakukan rekonsiliasi bank dan input laporan kas setiap akhir bulan, rekap hutang beredar, serta membuat voucher pengeluaran dan penerimaan kas pada 2 perusahaan.</p>
                         <div class="flex flex-wrap gap-2">
-                            <span class="tech-badge px-3 py-1 bg-gray-800 text-indigo-300 rounded-full text-sm shadow-sm dark:bg-gray-700 dark:text-indigo-300">Microsoft Word dan Excel</span>
-                            <span class="tech-badge px-3 py-1 bg-gray-800 text-indigo-300 rounded-full text-sm shadow-sm dark:bg-gray-700 dark:text-indigo-300">Accurate</span>
+                            <span class="px-3 py-1 bg-gray-800 text-indigo-300 rounded-full text-sm shadow-sm dark:bg-gray-700 dark:text-indigo-300">Microsoft Word dan Excel</span>
+                            <span class="px-3 py-1 bg-gray-800 text-indigo-300 rounded-full text-sm shadow-sm dark:bg-gray-700 dark:text-indigo-300">Accurate</span>
                         </div>
                     </div>
 
@@ -494,17 +314,17 @@
                                 <div class="w-12 h-12 gradient-bg rounded-xl flex items-center justify-center mr-4 shadow-md">
                                     <i class="bi bi-tools text-white text-xl"></i>
                                 </div>
-                                <h3 class="text-xl font-semibold animated-text">Operator Mesin Label</h3>
+                                <h3 class="text-xl font-semibold">Operator Mesin Label</h3>
                             </div>
-                            <span class="px-3 py-1 bg-indigo-100 text-indigo-600 rounded-full text-sm dark:bg-indigo-900 dark:text-indigo-200 animated-highlight">Februari - Maret 2024</span>
+                            <span class="px-3 py-1 bg-indigo-100 text-indigo-600 rounded-full text-sm dark:bg-indigo-900 dark:text-indigo-200">Februari - Maret 2024</span>
                         </div>
-                        <p class="text-indigo-300 mb-2 font-medium animated-border">PT. Amanah Prima Indonesia</p>
+                        <p class="text-indigo-300 mb-2 font-medium">PT. Amanah Prima Indonesia</p>
                         <!-- Logo perusahaan -->
                         <img src="amanah.png" alt="Logo PT. Amanah Prima Indonesia" class="company-logo">
-                        <p class="mb-4 dark:text-gray-300 animated-paragraph">Mengolah buah, mempersiapkan mesin, mengoperasikan mesin pembersih buah, pengolahan buah dan label, melakukan pengemasan produk, dokumentasi produksi, dan memperbaiki kualitas produk.</p>
+                        <p class="mb-4 dark:text-gray-300">Mengolah buah, mempersiapkan mesin, mengoperasikan mesin pembersih buah, pengolahan buah dan label, melakukan pengemasan produk, dokumentasi produksi, dan memperbaiki kualitas produk.</p>
                         <div class="flex flex-wrap gap-2">
-                            <span class="tech-badge px-3 py-1 bg-gray-800 text-indigo-300 rounded-full text-sm shadow-sm dark:bg-gray-700 dark:text-indigo-300">Mesin Label</span>
-                            <span class="tech-badge px-3 py-1 bg-gray-800 text-indigo-300 rounded-full text-sm shadow-sm dark:bg-gray-700 dark:text-indigo-300">Produksi</span>
+                            <span class="px-3 py-1 bg-gray-800 text-indigo-300 rounded-full text-sm shadow-sm dark:bg-gray-700 dark:text-indigo-300">Mesin Label</span>
+                            <span class="px-3 py-1 bg-gray-800 text-indigo-300 rounded-full text-sm shadow-sm dark:bg-gray-700 dark:text-indigo-300">Produksi</span>
                         </div>
                     </div>
                 </div>
@@ -517,18 +337,18 @@
                                 <div class="w-12 h-12 gradient-bg rounded-xl flex items-center justify-center mr-4 shadow-md">
                                     <i class="bi bi-tools text-white text-xl"></i>
                                 </div>
-                                <h3 class="text-xl font-semibold animated-text">Operator Mesin Bubut</h3>
+                                <h3 class="text-xl font-semibold">Operator Mesin Bubut</h3>
                             </div>
-                            <span class="px-3 py-1 bg-indigo-100 text-indigo-600 rounded-full text-sm dark:bg-indigo-900 dark:text-indigo-200 animated-highlight">Juni - Agustus 2023</span>
+                            <span class="px-3 py-1 bg-indigo-100 text-indigo-600 rounded-full text-sm dark:bg-indigo-900 dark:text-indigo-200">Juni - Agustus 2023</span>
                         </div>
-                        <p class="text-indigo-300 mb-2 font-medium animated-border">PT. FAD Kamikawa</p>
+                        <p class="text-indigo-300 mb-2 font-medium">PT. FAD Kamikawa</p>
                         <!-- Logo perusahaan -->
                         <img src="fad.png" alt="Logo PT. FAD Kamikawa" class="company-logo">
-                        <p class="mb-4 dark:text-gray-300 animated-paragraph">Mempersiapkan mesin, mengoperasikan mesin bubut, melakukan perbaikan mesin secara berkala, melakukan pembubutan terhadap produk sesuai dengan ukuran, dokumentasi produk, dan memperbaiki kualitas produk.</p>
+                        <p class="mb-4 dark:text-gray-300">Mempersiapkan mesin, mengoperasikan mesin bubut, melakukan perbaikan mesin secara berkala, melakukan pembubutan terhadap produk sesuai dengan ukuran, dokumentasi produk, dan memperbaiki kualitas produk.</p>
                         <div class="flex flex-wrap gap-2">
-                            <span class="tech-badge px-3 py-1 bg-gray-800 text-indigo-300 rounded-full text-sm shadow-sm dark:bg-gray-700 dark:text-indigo-300">Mesin Bubut Manual</span>
-                            <span class="tech-badge px-3 py-1 bg-gray-800 text-indigo-300 rounded-full text-sm shadow-sm dark:bg-gray-700 dark:text-indigo-300">Produksi</span>
-                            <span class="tech-badge px-3 py-1 bg-gray-800 text-indigo-300 rounded-full text-sm shadow-sm dark:bg-gray-700 dark:text-indigo-300">Quality Control</span>
+                            <span class="px-3 py-1 bg-gray-800 text-indigo-300 rounded-full text-sm shadow-sm dark:bg-gray-700 dark:text-indigo-300">Mesin Bubut Manual</span>
+                            <span class="px-3 py-1 bg-gray-800 text-indigo-300 rounded-full text-sm shadow-sm dark:bg-gray-700 dark:text-indigo-300">Produksi</span>
+                            <span class="px-3 py-1 bg-gray-800 text-indigo-300 rounded-full text-sm shadow-sm dark:bg-gray-700 dark:text-indigo-300">Quality Control</span>
                         </div>
                     </div>
 
@@ -538,18 +358,18 @@
                                 <div class="w-12 h-12 gradient-bg rounded-xl flex items-center justify-center mr-4 shadow-md">
                                     <i class="bi bi-tools text-white text-xl"></i>
                                 </div>
-                                <h3 class="text-xl font-semibold animated-text">Operator Produksi</h3>
+                                <h3 class="text-xl font-semibold">Operator Produksi</h3>
                             </div>
-                            <span class="px-3 py-1 bg-indigo-100 text-indigo-600 rounded-full text-sm dark:bg-indigo-900 dark:text-indigo-200 animated-highlight">Juni - Desember 2022</span>
+                            <span class="px-3 py-1 bg-indigo-100 text-indigo-600 rounded-full text-sm dark:bg-indigo-900 dark:text-indigo-200">Juni - Desember 2022</span>
                         </div>
-                        <p class="text-indigo-300 mb-2 font-medium animated-border">PT. Menara Inti Kreasi Indonesia</p>
+                        <p class="text-indigo-300 mb-2 font-medium">PT. Menara Inti Kreasi Indonesia</p>
                         <!-- Logo perusahaan -->
                         <img src="miki.jpg" alt="Logo PT. Amanah Prima Indonesia" class="company-logo">
-                        <p class="mb-4 dark:text-gray-300 animated-paragraph">Melakukan perakitan produk alat kesehatan sesuai intruksi kerja, menguji coba produk, melakukan perbaikan dan penggantian suku cadang pada produk yang rusak, berkontribusi dalam pengemasan, mengoperasikan mesin laminasi, laser dan penyegel plastik, melakukan dokumentasi hasil produksi dan pengemasan.</p>
+                        <p class="mb-4 dark:text-gray-300">Melakukan perakitan produk alat kesehatan sesuai intruksi kerja, menguji coba produk, melakukan perbaikan dan penggantian suku cadang pada produk yang rusak, berkontribusi dalam pengemasan, mengoperasikan mesin laminasi, laser dan penyegel plastik, melakukan dokumentasi hasil produksi dan pengemasan.</p>
                         <div class="flex flex-wrap gap-2">
-                            <span class="tech-badge px-3 py-1 bg-gray-800 text-indigo-300 rounded-full text-sm shadow-sm dark:bg-gray-700 dark:text-indigo-300">Mesin Laminasi, Laser dan Segel Plastik</span>
-                            <span class="tech-badge px-3 py-1 bg-gray-800 text-indigo-300 rounded-full text-sm shadow-sm dark:bg-gray-700 dark:text-indigo-300">Produksi dan Pengemasan</span>
-                            <span class="tech-badge px-3 py-1 bg-gray-800 text-indigo-300 rounded-full text-sm shadow-sm dark:bg-gray-700 dark:text-indigo-300">Quality Control</span>
+                            <span class="px-3 py-1 bg-gray-800 text-indigo-300 rounded-full text-sm shadow-sm dark:bg-gray-700 dark:text-indigo-300">Mesin Laminasi, Laser dan Segel Plastik</span>
+                            <span class="px-3 py-1 bg-gray-800 text-indigo-300 rounded-full text-sm shadow-sm dark:bg-gray-700 dark:text-indigo-300">Produksi dan Pengemasan</span>
+                            <span class="px-3 py-1 bg-gray-800 text-indigo-300 rounded-full text-sm shadow-sm dark:bg-gray-700 dark:text-indigo-300">Quality Control</span>
                         </div>
                     </div>
                 </div>
@@ -558,8 +378,8 @@
     </section>
 
     <!-- Footer -->
-    <footer class="nature-footer w-full py-12 text-white">
-        <div class="container mx-auto px-4 relative z-10">
+    <footer class="w-full py-12 text-white dark:bg-gray-900">
+        <div class="container mx-auto px-4">
             <div class="flex flex-col md:flex-row justify-between items-center">
                 <div class="mb-6 md:mb-0">
                     <h3 class="text-2xl font-bold mb-2">Nanda Padilah</h3>
@@ -569,10 +389,10 @@
                     <a href="https://www.linkedin.com/in/nanda-padilah-6a5b6434a" class="text-gray-300 hover:text-indigo-300 transition">
                         <i class="bi bi-linkedin text-xl"></i>
                     </a>
-                    <a href="+62 813-1138-4266" class="text-gray-300 hover:text-indigo-300 transition">
+                    <a href="https://wa.me/6281311384266" class="text-gray-300 hover:text-indigo-300 transition">
                         <i class="bi bi-whatsapp text-xl"></i>
                     </a>
-                    <a href="@Fadilltx" class="text-gray-300 hover:text-indigo-300 transition">
+                    <a href="https://t.me/Fadilltx" class="text-gray-300 hover:text-indigo-300 transition">
                         <i class="bi bi-telegram text-xl"></i>
                     </a>
                     <a href="https://www.instagram.com/emerald.tx/" class="text-gray-300 hover:text-indigo-300 transition">
@@ -648,7 +468,7 @@
             navLinks.forEach(link => {
                 const linkHref = link.getAttribute('href');
                 if (linkHref === currentPage) {
-                    link.classList.add('active', 'text-indigo-600');
+                    link.classList.add('active');
                 }
             });
         });
