@@ -953,7 +953,7 @@
             },
             'powerbank': {
                 title: 'Power Bank 9V',
-                image: 'powerbank.jpg',
+                image: 'skema.jpg',
                 description: 'Power Bank sederhana menggunakan Baterai Lithium Ion 9V',
                 details: [
                     'Sambung terlebih dahulu baterai dengan timah panas dengan cara di solder 3 kawat pada bagian atas dan Bawah agar menyatu satu sama lain.',
@@ -965,7 +965,7 @@
             },
             'pcb-design': {
                 title: 'Desain PCB',
-                image: 'pcb.jpg',
+                image: 'board.jpg',
                 description: 'Desain dengan proses kimia',
                 details: [
                     'Proses desain PCB menggunakan software EagleCAD',
@@ -980,11 +980,11 @@
                 image: 'kran.jpg',
                 description: 'Sistem akses menggunakan kartu RFID',
                 details: [
-                    'Sistem kontrol akses air menggunakan RFID',
-                    'Hanya kartu yang terdaftar yang dapat mengaktifkan kran air',
-                    'Menggunakan Arduino sebagai pengendali utama'
+                    'Pada stepdown 5v terdiri dari input dan outputnya 5v, output positif 5v masuk ke DC+ relay sedangkan output negatif 5v masuk ke DC- relay. Kemudian pada sensor IR terdiri 3 kabel coklat, biru dan hitam, kabel coklat masuk ke DC+ relay, biru masuk ke DC- relay dan hitam masuk ke input relay.',
+                    'Pada Solenoid electric valve terdiri dari 2 output 12V, sambungkan kabel dari input stepdown positif ke command relay sedangkan negatif ke electric valve.',
+                    'kemudian proses akhir pada normaly open relay sambungkan ke Electric valve.'
                 ],
-                technologies: ['Arduino', 'RFID RC522'],
+                technologies: ['Solenoid Electronic Valve, Driver Relay 1 Channel 5V', 'Sensor IR E18 D80, Stepdown 5V, Adaptor 12V 2 Ampere', 'Kotak Penyimpanan, Kabel dan Jack Konektor.'],
                 link: '#'
             },
             'running-text': {
@@ -992,11 +992,11 @@
                 image: 'runningtext.jpg',
                 description: 'Robot pengikut garis sederhana',
                 details: [
-                    'Menggunakan sensor IR untuk mendeteksi garis',
-                    'Kontrol kecepatan motor menggunakan PWM',
-                    'Algoritma sederhana untuk mengikuti garis'
+                    'Siapkan seluruh alat dan bahan serta softwarenya, install library tambahan yang sudah siap pakai seperti MD_Parola dan MD_MAX72XX, sambungkan modul MAX7219 8X8 Dot.',
+                    'Matrix ke Arduino uno, masukan kode running text pada software Arduino IDE dan sertakan "Nama dan Kelas" untuk dokumentasi.',
+                    'kemudian upload kode running text tersebut disertai dengan timer.'
                 ],
-                technologies: ['Sensor IR', 'Motor DC'],
+                technologies: ['Arduino Uno R3, Panel LED Dot Matrix (P10 atau 8x8 Seri)', 'Driver IC (MAX7219 controller), Kabel Jumper', 'Power Supply 5V 2A, dan Software Arduino IDE'],
                 link: '#'
             },
             'spt-ppn': {
