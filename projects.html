@@ -489,10 +489,11 @@
                     </div>
                     <div class="project-content">
                         <h3 class="text-xl font-semibold mt-4 mb-2 dark:text-white">Kran Air Otomatis</h3>
-                        <p class="mb-4 dark:text-gray-300">Sistem akses menggunakan kartu RFID</p>
+                        <p class="mb-4 dark:text-gray-300">Project sederhana menggunakan sensor IR E18 D80</p>
                         <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="tech-badge px-3 py-1 bg-white text-indigo-600 rounded-full text-sm shadow-sm dark:bg-gray-700 dark:text-gray-300">Arduino</span>
-                            <span class="tech-badge px-3 py-1 bg-white text-indigo-600 rounded-full text-sm shadow-sm dark:bg-gray-700 dark:text-gray-300">RFID RC522</span>
+                            <span class="tech-badge px-3 py-1 bg-white text-indigo-600 rounded-full text-sm shadow-sm dark:bg-gray-700 dark:text-gray-300">Sensr IR E18 D80</span>
+                            <span class="tech-badge px-3 py-1 bg-white text-indigo-600 rounded-full text-sm shadow-sm dark:bg-gray-700 dark:text-gray-300">Solenoid Electronic Valve</span>
+                            <span class="tech-badge px-3 py-1 bg-white text-indigo-600 rounded-full text-sm shadow-sm dark:bg-gray-700 dark:text-gray-300">Stepdown</span>
                         </div>
                         <div class="flex justify-between items-center mt-auto">
                             <button class="view-project-btn px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition dark:bg-indigo-700" 
@@ -514,10 +515,10 @@
                     </div>
                     <div class="project-content">
                         <h3 class="text-xl font-semibold mt-4 mb-2 dark:text-white">Display Running Text</h3>
-                        <p class="mb-4 dark:text-gray-300">Robot pengikut garis sederhana</p>
+                        <p class="mb-4 dark:text-gray-300">Project sederhana menggunakan bahasa pemograman Arduino IDE</p>
                         <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="tech-badge px-3 py-1 bg-white text-indigo-600 rounded-full text-sm shadow-sm dark:bg-gray-700 dark:text-gray-300">Sensor IR</span>
-                            <span class="tech-badge px-3 py-1 bg-white text-indigo-600 rounded-full text-sm shadow-sm dark:bg-gray-700 dark:text-gray-300">Motor DC</span>
+                            <span class="tech-badge px-3 py-1 bg-white text-indigo-600 rounded-full text-sm shadow-sm dark:bg-gray-700 dark:text-gray-300">Arduino IDE</span>
+                            <span class="tech-badge px-3 py-1 bg-white text-indigo-600 rounded-full text-sm shadow-sm dark:bg-gray-700 dark:text-gray-300">Panel LED Dot Matrix (P10 atau 8x8 Seri)</span>
                         </div>
                         <div class="flex justify-between items-center mt-auto">
                             <button class="view-project-btn px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition dark:bg-indigo-700" 
@@ -978,26 +979,26 @@
             'rfid-water': {
                 title: 'Kran Air Otomatis',
                 image: 'kran.jpg',
-                description: 'Sistem akses menggunakan kartu RFID',
+                description: 'Project sederhana menggunakan senror IR E18 D80',
                 details: [
                     'Pada stepdown 5v terdiri dari input dan outputnya 5v, output positif 5v masuk ke DC+ relay sedangkan output negatif 5v masuk ke DC- relay. Kemudian pada sensor IR terdiri 3 kabel coklat, biru dan hitam, kabel coklat masuk ke DC+ relay, biru masuk ke DC- relay dan hitam masuk ke input relay.',
                     'Pada Solenoid electric valve terdiri dari 2 output 12V, sambungkan kabel dari input stepdown positif ke command relay sedangkan negatif ke electric valve.',
                     'kemudian proses akhir pada normaly open relay sambungkan ke Electric valve.'
                 ],
                 technologies: ['Solenoid Electronic Valve, Driver Relay 1 Channel 5V', 'Sensor IR E18 D80, Stepdown 5V, Adaptor 12V 2 Ampere', 'Kotak Penyimpanan, Kabel dan Jack Konektor.'],
-                link: '#'
+                link: 'https://drive.google.com/file/d/1q38GbujmbQQqdVkURnwE7xqEgOfDotkB/view?usp=sharing'
             },
             'running-text': {
                 title: 'Display Running Text',
                 image: 'runningtext.jpg',
-                description: 'Robot pengikut garis sederhana',
+                description: 'Project sederhana menggunakan bahasa pemograman Arduino IDE',
                 details: [
                     'Siapkan seluruh alat dan bahan serta softwarenya, install library tambahan yang sudah siap pakai seperti MD_Parola dan MD_MAX72XX, sambungkan modul MAX7219 8X8 Dot.',
                     'Matrix ke Arduino uno, masukan kode running text pada software Arduino IDE dan sertakan "Nama dan Kelas" untuk dokumentasi.',
                     'kemudian upload kode running text tersebut disertai dengan timer.'
                 ],
                 technologies: ['Arduino Uno R3, Panel LED Dot Matrix (P10 atau 8x8 Seri)', 'Driver IC (MAX7219 controller), Kabel Jumper', 'Power Supply 5V 2A, dan Software Arduino IDE'],
-                link: '#'
+                link: 'https://drive.google.com/file/d/1TWwF1cMvi2OpBsQ7sZxPbx0xI35CuYYK/view?usp=sharing'
             },
             'spt-ppn': {
                 title: 'SPT Masa PPN',
